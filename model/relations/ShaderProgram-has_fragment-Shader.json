@@ -1,0 +1,12 @@
+{
+  "left": {
+    "className": "ShaderProgram",
+    "cardinality": "0..1",
+    "phrase": "has fragment"
+  },
+  "right": {
+    "className": "Shader",
+    "cardinality": "0..1",
+    "phrase": "is fragment"
+  }
+}

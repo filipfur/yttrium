@@ -1,0 +1,4 @@
+if(name in this.locations == false)
+{
+    this.locations[name] = gl.getUniformLocation(this.internal, name);
+}

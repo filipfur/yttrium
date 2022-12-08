@@ -1,0 +1,11 @@
+this.isVertex = new Shader(gl.VERTEX_SHADER, vertexSrc);
+this.isFragment = new Shader(gl.FRAGMENT_SHADER, fragmentSrc);
+this.internal = gl.createProgram();
+gl.attachShader(this.internal, this.isVertex.internal);
+gl.attachShader(this.internal, this.isFragment.internal);
+gl.linkProgram(this.internal)
+if (!gl.getProgramParameter(this.internal, gl.LINK_STATUS)) {
+    console.log(
+        `Unable to initialize the shader program: ${gl.getProgramInfoLog(this.internal)}`
+    );
+}

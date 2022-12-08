@@ -1,0 +1,68 @@
+{
+  "name": "ShaderProgram",
+  "hash": "BJjsuI0J9ehqYf9E8sYNsZFsdDZXDnGr",
+  "position": {
+    "x": -677,
+    "y": 365
+  },
+  "attributes": [
+    {
+      "name": "internal",
+      "type": "any"
+    },
+    {
+      "name": "locations",
+      "type": "any"
+    }
+  ],
+  "operations": [
+    {
+      "name": "use",
+      "type": "void",
+      "parameters": [],
+      "hash": "LcXvPgM52KHeOPiv1S9t8bWjJ4idPE4d"
+    },
+    {
+      "name": "loadLocation",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "hash": "wVSm7n43ZFUOeScvvwy7gDKu3Cza5XLh"
+    },
+    {
+      "name": "setUniform1f",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "real"
+        }
+      ],
+      "hash": "XUDceO8ddbAVCfFXaiH2OZ8wQ56g01dE"
+    },
+    {
+      "name": "constructor",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "vertexSrc",
+          "type": "string"
+        },
+        {
+          "name": "fragmentSrc",
+          "type": "string"
+        }
+      ],
+      "hash": "FASrysCVfdDDkD3uEELPb062Ib1gI4Mc"
+    }
+  ],
+  "inherits": []
+}

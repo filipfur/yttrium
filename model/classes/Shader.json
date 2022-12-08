@@ -1,0 +1,32 @@
+{
+  "name": "Shader",
+  "hash": "Nasr6yDSUYahOch8aFbQ4aQq1tnoieTi",
+  "position": {
+    "x": -282,
+    "y": 449
+  },
+  "attributes": [
+    {
+      "name": "internal",
+      "type": "any"
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "type",
+          "type": "any"
+        },
+        {
+          "name": "source",
+          "type": "string"
+        }
+      ],
+      "hash": "aHYl1LGnP00XC2TyPW83nzQ4thyjwoEa"
+    }
+  ],
+  "inherits": []
+}

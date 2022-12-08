@@ -1,0 +1,9 @@
+this.internal = gl.createShader(type);
+gl.shaderSource(this.internal, source);
+gl.compileShader(this.internal)
+if (!gl.getShaderParameter(this.internal, gl.COMPILE_STATUS)) {
+    console.log(
+        `An error occurred compiling the shaders: ${gl.getShaderInfoLog(this.internal)}`
+    );
+    gl.deleteShader(this.internal);
+}
