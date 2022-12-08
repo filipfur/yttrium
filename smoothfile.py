@@ -7,14 +7,15 @@ def _default(*args):
     return True
 
 def _reflect():
-    return reflect.reflectSource("model/core", os.path.join("gen", "core"))
+    return reflect.reflectSource(os.path.join("models","core"), os.path.join("gen", "core"))
 
 def _translatecpp():
-    return modeltosrc.translatecpp("models/core", "gen", "core")
+    return modeltosrc.translatecpp(os.path.join("models","core"), "gen", "core")
 
 def _translatets():
-    return modeltosrc.translatets("models/core", "gen", "core")
+    return modeltosrc.translatets(os.path.join("models","core"), "gen", "core")
 
 def _gen():
-    _reflect()
-    _translatets()
+    if _reflect():
+        return _translatets()
+    return False
