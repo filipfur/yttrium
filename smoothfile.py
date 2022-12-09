@@ -3,17 +3,20 @@ import reflect
 
 import os;
 
+PATH_MODELS_CORE = os.path.join("models","core")
+PATH_GEN = os.path.join("src", "gen")
+
 def _default(*args):
     return True
 
 def _reflect():
-    return reflect.reflectSource(os.path.join("models","core"), os.path.join("gen", "core"))
+    return reflect.reflectSource(PATH_MODELS_CORE, os.path.join(PATH_GEN, "core"))
 
 def _translatecpp():
-    return modeltosrc.translatecpp(os.path.join("models","core"), "gen", "core")
+    return modeltosrc.translatecpp(PATH_MODELS_CORE, PATH_GEN, "core")
 
 def _translatets():
-    return modeltosrc.translatets(os.path.join("models","core"), "gen", "core")
+    return modeltosrc.translatets(PATH_MODELS_CORE, PATH_GEN, "core")
 
 def _gen():
     if _reflect():
