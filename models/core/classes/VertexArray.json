@@ -1,0 +1,58 @@
+{
+  "name": "VertexArray",
+  "hash": "vEuV7TWExn3zeSOfSYq7ELKpMCOTi5IG",
+  "position": {
+    "x": -715,
+    "y": 611
+  },
+  "attributes": [
+    {
+      "name": "vertexBuffer",
+      "type": "any"
+    },
+    {
+      "name": "indexBuffer",
+      "type": "any"
+    },
+    {
+      "name": "internal",
+      "type": "any"
+    },
+    {
+      "name": "mode",
+      "type": "any"
+    },
+    {
+      "name": "indexCount",
+      "type": "integer"
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "attributes",
+          "type": "any"
+        },
+        {
+          "name": "vertices",
+          "type": "any"
+        },
+        {
+          "name": "indices",
+          "type": "any"
+        }
+      ],
+      "hash": "MtnJ4O0hL6xybWhP1zNWVkPydQGJ8qdK"
+    },
+    {
+      "name": "draw",
+      "type": "void",
+      "parameters": [],
+      "hash": "0fyDxoTBNJJv0CHdVLai1r0zmm4yhqBU"
+    }
+  ],
+  "inherits": []
+}

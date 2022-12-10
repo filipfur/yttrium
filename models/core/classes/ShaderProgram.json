@@ -62,6 +62,21 @@
         }
       ],
       "hash": "FASrysCVfdDDkD3uEELPb062Ib1gI4Mc"
+    },
+    {
+      "name": "setUniformMatrix4f",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "matrix",
+          "type": "any"
+        }
+      ],
+      "hash": "nAM1YmRhgKgCZfkS7jVzvyQ3h8zN9da4"
     }
   ],
   "inherits": []

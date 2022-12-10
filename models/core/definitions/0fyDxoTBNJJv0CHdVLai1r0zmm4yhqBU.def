@@ -1,0 +1,9 @@
+gl.bindVertexArray(this.internal)
+if(this.mode == gl.ARRAY_BUFFER)
+{
+    gl.drawArrays(gl.TRIANGLES, 0, 4);
+}
+else if(this.mode == gl.ELEMENT_ARRAY_BUFFER)
+{
+    gl.drawElements(gl.TRIANGLES, this.indexCount, gl.UNSIGNED_SHORT, 0);
+}
