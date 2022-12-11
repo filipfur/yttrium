@@ -1,0 +1,34 @@
+{
+  "name": "ImageTexture",
+  "position": {
+    "x": -177,
+    "y": 648
+  },
+  "attributes": [
+    {
+      "name": "internal",
+      "type": "any"
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "imagePath",
+          "type": "string"
+        }
+      ],
+      "hash": "goitIXkgPf7kPTWgErwqGVaZYHn1ge2s"
+    },
+    {
+      "name": "bind",
+      "type": "void",
+      "parameters": [],
+      "hash": "zxyskPDsZtEq71HIveIyGGGxNwYiPSfz"
+    }
+  ],
+  "inherits": [],
+  "hash": "y1nLeebQfq1L4YLfAnRP8SnIxT86OgpE"
+}

@@ -1,7 +1,7 @@
-gl.bindVertexArray(this.internal)
+this.bind()
 if(this.mode == gl.ARRAY_BUFFER)
 {
-    gl.drawArrays(gl.TRIANGLES, 0, 4);
+    gl.drawArrays(gl.TRIANGLES, 0, this.vertexCount);
 }
 else if(this.mode == gl.ELEMENT_ARRAY_BUFFER)
 {

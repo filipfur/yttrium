@@ -77,6 +77,36 @@
         }
       ],
       "hash": "nAM1YmRhgKgCZfkS7jVzvyQ3h8zN9da4"
+    },
+    {
+      "name": "setUniform1i",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "integer"
+        }
+      ],
+      "hash": "GC33wGL0beT5OjxSLNWzaZ5spa3A8qBx"
+    },
+    {
+      "name": "setUniform3f",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "any"
+        }
+      ],
+      "hash": "43JK2VVTQDpfWTvrogYhgQVPk5UDzbIV"
     }
   ],
   "inherits": []

@@ -1,0 +1,2 @@
+this.loadLocation(name);
+gl.uniform1i(this.locations[name], value);
