@@ -12,6 +12,7 @@ confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
 
 //import './webglcontext'
 import { Asset_block } from "./assets/block";
+import { Asset_grass2 } from "./assets/grass2";
 import { Asset_plane } from "./assets/plane";
 import { Asset_rabbit } from "./assets/rabbit";
 import { ImageTexture } from "./gen/core/imagetexture";
@@ -188,6 +189,7 @@ window.onload = () => {
 
   const rabbitDiffuse = new ImageTexture("assets/rabbit.png");
   const dirtDiffuse = new ImageTexture("assets/dirt.png");
+  const grassDiffuse = new ImageTexture("assets/grass2.png");
 
   const vertexArray = new VertexArray([3, 3], [
     -1.0, -1.0, 0.0, 1.0, 0.0, 0.0,
@@ -203,9 +205,22 @@ window.onload = () => {
 
   const rabbitVAO = new Asset_rabbit();
 
+  const grass2VAO = new Asset_grass2();
+
   let lastTime = 0;
 
   //gl.viewport(0, 0, 720, 180);
+
+  let positions = [
+    glm.vec3(4.0, 0.0, 0.0),
+    glm.vec3(6.0, 0.0, 3.0),
+    glm.vec3(3.0, 0.0, 3.0),
+    glm.vec3(3.0, 0.0, 6.0),
+    glm.vec3(2.0, 0.0, 4.0)
+  ];
+  let scales = [
+    1.4, 1.6, 1.7, 1.3, 1.4
+  ];
 
   const drawScene = (time:number) => {
     time *= 0.001;
@@ -250,6 +265,23 @@ window.onload = () => {
     cubeShader.setUniformMatrix4f("u_model", model.array);
     rabbitDiffuse.bind();
     rabbitVAO.draw();
+    grassDiffuse.bind();
+
+    positions.forEach((position, i) =>
+    {
+      model = glm.mat4(1.0);
+      model = glm.translate(model, position)
+      model = glm.scale(model, glm.vec3(scales[i]));
+      cubeShader.setUniformMatrix4f("u_model", model.array);
+      grass2VAO.draw();
+    });
+
+    /*model = glm.mat4(1.0);
+    model = glm.translate(model, glm.vec3(1.0, 0.0, 4.0))
+    model = glm.scale(model, glm.vec3(2.0));
+    cubeShader.setUniformMatrix4f("u_model", model.array);
+    grass2VAO.draw();*/
+
     requestAnimationFrame(drawScene);
     lastTime = time;
   };

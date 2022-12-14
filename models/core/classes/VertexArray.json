@@ -2,24 +2,24 @@
   "name": "VertexArray",
   "hash": "vEuV7TWExn3zeSOfSYq7ELKpMCOTi5IG",
   "position": {
-    "x": -715,
-    "y": 611
+    "x": -804,
+    "y": 546
   },
   "attributes": [
-    {
-      "name": "vertexBuffer",
-      "type": "any"
-    },
-    {
-      "name": "indexBuffer",
-      "type": "any"
-    },
     {
       "name": "internal",
       "type": "any"
     },
     {
       "name": "mode",
+      "type": "any"
+    },
+    {
+      "name": "vertexBuffer",
+      "type": "any"
+    },
+    {
+      "name": "indexBuffer",
       "type": "any"
     },
     {
@@ -52,16 +52,16 @@
       "hash": "MtnJ4O0hL6xybWhP1zNWVkPydQGJ8qdK"
     },
     {
-      "name": "draw",
-      "type": "void",
-      "parameters": [],
-      "hash": "0fyDxoTBNJJv0CHdVLai1r0zmm4yhqBU"
-    },
-    {
       "name": "bind",
       "type": "void",
       "parameters": [],
       "hash": "PIRkcWpyNX3lkmY9E1fB7hf6jyO9r15T"
+    },
+    {
+      "name": "draw",
+      "type": "void",
+      "parameters": [],
+      "hash": "0fyDxoTBNJJv0CHdVLai1r0zmm4yhqBU"
     }
   ],
   "inherits": []

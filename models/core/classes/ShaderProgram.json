@@ -17,6 +17,21 @@
   ],
   "operations": [
     {
+      "name": "constructor",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "vertexSrc",
+          "type": "string"
+        },
+        {
+          "name": "fragmentSrc",
+          "type": "string"
+        }
+      ],
+      "hash": "FASrysCVfdDDkD3uEELPb062Ib1gI4Mc"
+    },
+    {
       "name": "use",
       "type": "void",
       "parameters": [],
@@ -49,36 +64,6 @@
       "hash": "XUDceO8ddbAVCfFXaiH2OZ8wQ56g01dE"
     },
     {
-      "name": "constructor",
-      "type": "void",
-      "parameters": [
-        {
-          "name": "vertexSrc",
-          "type": "string"
-        },
-        {
-          "name": "fragmentSrc",
-          "type": "string"
-        }
-      ],
-      "hash": "FASrysCVfdDDkD3uEELPb062Ib1gI4Mc"
-    },
-    {
-      "name": "setUniformMatrix4f",
-      "type": "void",
-      "parameters": [
-        {
-          "name": "name",
-          "type": "string"
-        },
-        {
-          "name": "matrix",
-          "type": "any"
-        }
-      ],
-      "hash": "nAM1YmRhgKgCZfkS7jVzvyQ3h8zN9da4"
-    },
-    {
       "name": "setUniform1i",
       "type": "void",
       "parameters": [
@@ -107,6 +92,21 @@
         }
       ],
       "hash": "43JK2VVTQDpfWTvrogYhgQVPk5UDzbIV"
+    },
+    {
+      "name": "setUniformMatrix4f",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "matrix",
+          "type": "any"
+        }
+      ],
+      "hash": "nAM1YmRhgKgCZfkS7jVzvyQ3h8zN9da4"
     }
   ],
   "inherits": []

@@ -1,8 +1,9 @@
 {
   "name": "ImageTexture",
+  "hash": "y1nLeebQfq1L4YLfAnRP8SnIxT86OgpE",
   "position": {
-    "x": -177,
-    "y": 648
+    "x": -226,
+    "y": 569
   },
   "attributes": [
     {
@@ -29,6 +30,5 @@
       "hash": "zxyskPDsZtEq71HIveIyGGGxNwYiPSfz"
     }
   ],
-  "inherits": [],
-  "hash": "y1nLeebQfq1L4YLfAnRP8SnIxT86OgpE"
+  "inherits": []
 }
