@@ -1,9 +1,27 @@
 this.bind()
+
 if(this.mode == gl.ARRAY_BUFFER)
 {
-    gl.drawArrays(gl.TRIANGLES, 0, this.vertexCount);
+    if(this.buffersInstancesIn)
+    {
+        let n:number = this.buffersInstancesIn ? (this.buffersInstancesIn.count / this.instanceComponents) : 0;
+        gl.drawArraysInstanced(gl.TRIANGLES, 0, this.buffersVerticesIn.count,
+            n)
+    }
+    else
+    {
+        gl.drawArrays(gl.TRIANGLES, 0, this.buffersVerticesIn.count);
+    }
 }
 else if(this.mode == gl.ELEMENT_ARRAY_BUFFER)
 {
-    gl.drawElements(gl.TRIANGLES, this.indexCount, gl.UNSIGNED_SHORT, 0);
+    if(this.buffersInstancesIn)
+    {
+        gl.drawElementsInstanced(gl.TRIANGLES, this.buffersIndicesIn ? this.buffersIndicesIn.count : 0, gl.UNSIGNED_SHORT, 0,
+            this.buffersInstancesIn ? (this.buffersInstancesIn.count / this.instanceComponents) : 0);
+    }
+    else
+    {
+        gl.drawElements(gl.TRIANGLES, this.buffersIndicesIn ? this.buffersIndicesIn.count : 0, gl.UNSIGNED_SHORT, 0);
+    }
 }

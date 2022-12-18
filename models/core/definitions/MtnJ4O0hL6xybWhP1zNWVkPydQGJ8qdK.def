@@ -1,23 +1,17 @@
 this.internal = gl.createVertexArray();
 this.bind()
 this.mode = gl.ARRAY_BUFFER;
-this.vertexBuffer = gl.createBuffer();
-gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBuffer);
-gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+this.buffersVerticesIn = new VertexBuffer(vertices);
 
-this.vertexCount = vertices.length;
-
-this.indexCount = indices.length;
-console.log(this.indexCount);
-if(this.indexCount > 0)
+this.buffersIndicesIn = null;
+if(indices.length > 0)
 {
-    this.indexBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.indexBuffer);
-    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+    this.buffersIndicesIn = new ElementBuffer(indices);
     this.mode = gl.ELEMENT_ARRAY_BUFFER;
 }
+this.buffersInstancesIn = null;
+this.instanceComponents = 0;
 
-console.log("hello");
 const type = gl.FLOAT; // the data in the buffer is 32bit floats
 const normalize = false; // don't normalize
 let stride = 0; // how many bytes to get from one set of values to the next
@@ -30,7 +24,7 @@ for(let i in attributes)
     stride += attributes[i] * 4;
     components += attributes[i];
 }
-gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBuffer);
+this.buffersVerticesIn.bind();
 for(let i in attributes)
 {
     gl.enableVertexAttribArray(i);

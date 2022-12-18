@@ -88,6 +88,13 @@ def _mesh(filepath, uvx=1):
 
     return True
 
+def _reflectfile(filePath):
+    dataDir = None
+    if os.path.dirname(filePath) == os.path.join("src", "gen", "core"):
+        dataDir = PATH_MODELS_CORE
+    if dataDir == None:
+        return False
+    return reflect.reflectFile(dataDir, os.path.abspath(filePath))
 
 def _gen():
     if _reflect():

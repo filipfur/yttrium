@@ -1,0 +1,38 @@
+{
+  "name": "InstanceBuffer",
+  "position": {
+    "x": -870,
+    "y": 1009
+  },
+  "attributes": [
+    {
+      "name": "internal",
+      "type": "any"
+    },
+    {
+      "name": "count",
+      "type": "integer"
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "instances",
+          "type": "any"
+        }
+      ],
+      "hash": "2FGtKg49J9vR6lPExEeHLgDliMqS7BC3"
+    },
+    {
+      "name": "bind",
+      "type": "void",
+      "parameters": [],
+      "hash": "EfbjMP2gBIKW2Y5MBCO622lhNnuNJj2p"
+    }
+  ],
+  "inherits": [],
+  "hash": "M7vCAwEpUhEOXKVy7XgbucHPlkRB2m0c"
+}

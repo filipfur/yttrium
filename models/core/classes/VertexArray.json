@@ -15,19 +15,11 @@
       "type": "any"
     },
     {
-      "name": "vertexBuffer",
+      "name": "attributes",
       "type": "any"
     },
     {
-      "name": "indexBuffer",
-      "type": "any"
-    },
-    {
-      "name": "indexCount",
-      "type": "integer"
-    },
-    {
-      "name": "vertexCount",
+      "name": "instanceComponents",
       "type": "integer"
     }
   ],
@@ -62,6 +54,21 @@
       "type": "void",
       "parameters": [],
       "hash": "0fyDxoTBNJJv0CHdVLai1r0zmm4yhqBU"
+    },
+    {
+      "name": "setInstanceAttributes",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "instanceAttributes",
+          "type": "any"
+        },
+        {
+          "name": "instanceData",
+          "type": "any"
+        }
+      ],
+      "hash": "tUN2B2fvAuJa7xeuxlkBpCZQBcB6ldJr"
     }
   ],
   "inherits": []

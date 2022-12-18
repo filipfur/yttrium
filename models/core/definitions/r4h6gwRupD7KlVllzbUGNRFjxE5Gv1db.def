@@ -1,0 +1,1 @@
+gl.bindBuffer(gl.ARRAY_BUFFER, this.internal);

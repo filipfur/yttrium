@@ -1,0 +1,22 @@
+this.buffersInstancesIn = new InstanceBuffer(instanceData);
+const type = gl.FLOAT;
+const normalize = false;
+let stride = 0;
+let offset = 0;
+this.instanceComponents = 0;
+for(let i in instanceAttributes)
+{
+    stride += instanceAttributes[i] * 4;
+    this.instanceComponents += instanceAttributes[i];
+}
+this.buffersInstancesIn.bind();
+let n = this.attributes.length;
+console.log("n: " + n);
+for(let i in instanceAttributes)
+{
+    let I = Number(i);
+    gl.enableVertexAttribArray(n + I);
+    gl.vertexAttribPointer(n + I, instanceAttributes[i], type, normalize, stride, offset);
+    offset += instanceAttributes[i] * 4;
+    gl.vertexAttribDivisor(n + I, 1);
+}

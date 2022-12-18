@@ -1,11 +1,11 @@
 {
   "left": {
-    "className": "ShaderProgram",
-    "phrase": "has vertex",
+    "className": "VertexArray",
+    "phrase": "buffers indices in",
     "cardinality": "0..1"
   },
   "right": {
-    "className": "Shader",
+    "className": "ElementBuffer",
     "phrase": "",
     "cardinality": "0..1"
   }

@@ -1,0 +1,4 @@
+this.internal = gl.createBuffer();
+this.bind();
+gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+this.count = indices.length;

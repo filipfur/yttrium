@@ -1,1 +1,2 @@
 gl.useProgram(this.internal)
+// This is a cool comment. And its working 1337!

@@ -1,0 +1,38 @@
+{
+  "name": "VertexBuffer",
+  "hash": "TtQXCwBRwhAi9epGs5ddVAdGvfmGZz7k",
+  "position": {
+    "x": -320,
+    "y": 769
+  },
+  "attributes": [
+    {
+      "name": "internal",
+      "type": "any"
+    },
+    {
+      "name": "count",
+      "type": "integer"
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "vertices",
+          "type": "any"
+        }
+      ],
+      "hash": "XwBRmG5lL81YnTpb7eYyblFGfvmB7szO"
+    },
+    {
+      "name": "bind",
+      "type": "void",
+      "parameters": [],
+      "hash": "r4h6gwRupD7KlVllzbUGNRFjxE5Gv1db"
+    }
+  ],
+  "inherits": []
+}

@@ -1,0 +1,4 @@
+this.internal = gl.createBuffer();
+this.bind();
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+this.count = vertices.length;

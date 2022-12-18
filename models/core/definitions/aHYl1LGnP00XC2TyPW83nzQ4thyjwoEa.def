@@ -1,5 +1,3 @@
-this.hasFragment = null;
-this.hasVertex = null;
 this.internal = gl.createShader(type);
 gl.shaderSource(this.internal, source);
 gl.compileShader(this.internal)

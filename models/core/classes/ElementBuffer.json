@@ -1,0 +1,38 @@
+{
+  "name": "ElementBuffer",
+  "hash": "CJdkft6nns78CdOot6vn6QolUtSBgy4R",
+  "position": {
+    "x": -514,
+    "y": 976
+  },
+  "attributes": [
+    {
+      "name": "internal",
+      "type": "any"
+    },
+    {
+      "name": "count",
+      "type": "integer"
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "indices",
+          "type": "any"
+        }
+      ],
+      "hash": "hqsPn7cTkPn0PKfUW8E7QOD2kHC6ukWI"
+    },
+    {
+      "name": "bind",
+      "type": "void",
+      "parameters": [],
+      "hash": "rUnkSbslQL9N7otu7oCIGu1EdTSw0YH5"
+    }
+  ],
+  "inherits": []
+}
