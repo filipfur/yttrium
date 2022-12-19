@@ -1,86 +1,21 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
 
-/*import confetti from 'canvas-confetti';
+/*
+https://humbletim.github.io/glm-js/
+*/
 
-confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });*/
-
-//import './webglcontext'
-import { Asset_block } from "./assets/block";
-import { Asset_grass2 } from "./assets/grass2";
-import { Asset_plane } from "./assets/plane";
-import { Asset_rabbit } from "./assets/rabbit";
+import { Mesh_block } from "./assets/block";
+import { Mesh_grass2 } from "./assets/grass2";
+import { Mesh_plane } from "./assets/plane";
+import { Mesh_rabbit } from "./assets/rabbit";
 import { ImageTexture } from "./gen/core/imagetexture";
 import { ShaderProgram } from "./gen/core/shaderprogram"
 import { VertexArray } from "./gen/core/vertexarray";
+import { Object } from "./gen/render/object"
+
+//const glm = require('glm-js');
 
 console.log('glm-js version: ', glm.version);
 console.log('glm.vec3 example: ', glm.vec3(1,2,3));
-
-const cubePos = [
-  // Front face
-  -1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0, 1.0, 1.0, -1.0, 1.0, 1.0,
-
-  // Back face
-  -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0, -1.0, -1.0,
-
-  // Top face
-  -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0,
-
-  // Bottom face
-  -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, 1.0, -1.0, 1.0, -1.0, -1.0, 1.0,
-
-  // Right face
-  1.0, -1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0, 1.0, 1.0, -1.0, 1.0,
-
-  // Left face
-  -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0, -1.0,
-];
-
-
-const cubeIndices = [
-  0,
-  1,
-  2,
-  0,
-  2,
-  3, // front
-  4,
-  5,
-  6,
-  4,
-  6,
-  7, // back
-  8,
-  9,
-  10,
-  8,
-  10,
-  11, // top
-  12,
-  13,
-  14,
-  12,
-  14,
-  15, // bottom
-  16,
-  17,
-  18,
-  16,
-  18,
-  19, // right
-  20,
-  21,
-  22,
-  20,
-  22,
-  23, // left
-];
 
 const cubeVert = `#version 300 es
 precision highp float;
@@ -187,35 +122,7 @@ void main()
 }
 `;
 
-
 window.onload = () => {
-  const vsSource = `#version 300 es
-  precision highp float;
-  layout (location=0) in vec3 aPos;
-  layout (location=1) in vec3 aColor;
-  uniform mat4 u_projection;
-  uniform mat4 u_view;
-  uniform mat4 u_model;
-  out vec3 FragPos;
-  out vec3 Color;
-  void main() {
-    FragPos = vec3(u_model * vec4(aPos.xyx, 1.0));
-    Color = aColor;
-    gl_Position = u_projection * u_view * u_model * vec4(aPos, 1.0);
-  }
-  `;
-
-  const fsSource = `#version 300 es
-  precision highp float;
-  in vec3 FragPos;
-  out vec4 FragColor;
-  in vec3 Color;
-  uniform float u_time;
-  void main() 
-  {
-    FragColor = vec4(mix(vec3(cos(u_time * 2.0) * 0.2 + 0.7), Color, 0.5), 1.0);
-  }
-  `;
 
   const canvas = document.querySelector<HTMLCanvasElement>('#glCanvas');
   if(canvas)
@@ -231,53 +138,47 @@ window.onload = () => {
   }
   let projection = glm.perspective(glm.radians(45.0), 4.0 / 3.0, 0.1, 100.0);
 
-  const shaderProgram = new ShaderProgram(vsSource, fsSource);
-  shaderProgram.use();
-  shaderProgram.setUniformMatrix4f("u_projection", projection.array);
-
   const cubeShader = new ShaderProgram(cubeVert, cubeFrag);
   cubeShader.use();
-  cubeShader.setUniformMatrix4f("u_projection", projection.array);
-  cubeShader.setUniform1i("u_texture_0", 0);
+  cubeShader.setUniformMat4("u_projection", projection.array);
+  cubeShader.setUniformInteger("u_texture_0", 0);
 
   const instShader = new ShaderProgram(instVert, instFrag);
   instShader.use();
-  instShader.setUniformMatrix4f("u_projection", projection.array);
-  instShader.setUniform1i("u_texture_0", 0);
+  instShader.setUniformMat4("u_projection", projection.array);
+  instShader.setUniformInteger("u_texture_0", 0);
 
   const rabbitDiffuse = new ImageTexture("assets/rabbit.png");
   const dirtDiffuse = new ImageTexture("assets/dirt.png");
   const grassDiffuse = new ImageTexture("assets/grass2.png");
 
-  const vertexArray = new VertexArray([3, 3], [
-    -1.0, -1.0, 0.0, 1.0, 0.0, 0.0,
-    -1.0,  1.0, 0.0,  0.0, 1.0, 0.0,
-    1.0,  1.0, 0.0, 0.0, 0.0, 1.0,
-    1.0, -1.0, 0.0, 1.0, 1.0, 0.0],
-    [0, 2, 1,
-      0, 3, 2]);
+  const planeMesh = new Mesh_plane();
+  const planeObj = new Object(planeMesh, [dirtDiffuse]);
+  planeObj.setScale(glm.vec3(100.0));
 
-  const planeVAO = new Asset_plane();
+  const rabbitMesh = new Mesh_rabbit();
+  const rabbitObj = new Object(rabbitMesh, [rabbitDiffuse]);
+  rabbitObj.setUpdateCallback((obj, time, dt) => {
+    obj.setPosition(obj.position.add(glm.vec3(0.0, 0.0, dt)));
+  });
 
-  //const cubeVAO = new VertexArray([3], cubePos, cubeIndices);
-
-  const rabbitVAO = new Asset_rabbit();
-
-  const grass2VAO = new Asset_grass2();
+  const grass2VAO = new Mesh_grass2();
 
   const createInstance = (position:any) => {
     let inst = glm.mat4(1.0);
     inst = glm.translate(inst, position);
-    inst = glm.scale(inst, glm.vec3(2.0));
+    inst = glm.scale(inst, glm.vec3(2.0 * (Math.random() * 0.5 + 1.2)));
     return inst;
   }
 
   let instData:any = [];
-  for(let y = 0; y < 40; y++)
+  let X = 30;
+  let Y = 30;
+  for(let y = 0; y < Y; y++)
   {
-    for(let x = 0; x < 40; x++)
+    for(let x = 0; x < X; x++)
     {
-      instData = instData.concat(createInstance(glm.vec3((x - 20) * 4.0, 0.0, (y - 20) * 4.0)).array);
+      instData = instData.concat(createInstance(glm.vec3((x - X * 0.5) * 4.0 + Math.random(), 0.0, (y - Y * 0.5) * 4.0 + Math.random())).array);
     }
   }
   
@@ -287,27 +188,16 @@ window.onload = () => {
 
   //gl.viewport(0, 0, 720, 180);
 
-  let positions = [
-    glm.vec3(4.0, 0.0, 0.0),
-    glm.vec3(6.0, 0.0, 3.0),
-    glm.vec3(3.0, 0.0, 3.0),
-    glm.vec3(3.0, 0.0, 6.0),
-    glm.vec3(2.0, 0.0, 4.0)
-  ];
-  let scales = [
-    1.4, 1.6, 1.7, 1.3, 1.4
-  ];
-
   const drawScene = (time:number) => {
     time *= 0.001; 
     let dt = time - lastTime; 
 
     //console.log(dt);
-    let cameraAngle = (time * 0.3) % Math.PI * 2;
+    let cameraAngle = (time * 0.2) % Math.PI * 2;
     let camX = Math.sin(cameraAngle) * 32.0;
     let camZ = Math.cos(cameraAngle) * 32.0;
-    let viewPos = glm.vec3(camX, 32.0, camZ);
-    let view = glm.lookAt(viewPos, glm.vec3(0.0, 0.0, 0.0), glm.vec3(0.0, 1.0, 0.0));
+    let viewPos = rabbitObj.position.add(glm.vec3(camX, 32.0, camZ));
+    let view = glm.lookAt(viewPos, rabbitObj.position, glm.vec3(0.0, 1.0, 0.0));
     let model;
 
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
@@ -316,45 +206,28 @@ window.onload = () => {
     gl.depthFunc(gl.LEQUAL); // Near things obscure far things
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    /*shaderProgram.use();
-    shaderProgram.setUniformMatrix4f("u_model", model.array);
-    shaderProgram.setUniformMatrix4f("u_view", view.array);
-    shaderProgram.setUniform1f('u_time', time);
-    vertexArray.draw();*/
-
     cubeShader.use();
-    cubeShader.setUniformMatrix4f("u_view", view.array);
-    cubeShader.setUniform3f("u_view_pos", viewPos.array);
-    model = glm.mat4(1.0);
-    model = glm.translate(model, glm.vec3(0.0, 0.0, 0.0));
-    //model = glm.rotate(model, Math.PI * 0.5, glm.vec3(1.0, 0.0, 0.0));
-    model = glm.scale(model, glm.vec3(100.0));
-    cubeShader.setUniformMatrix4f("u_model", model.array);
-    dirtDiffuse.bind();
-    planeVAO.draw();
-    model = glm.mat4(1.0);
-    model = glm.scale(model, glm.vec3(1.0));
-    //model = glm.rotate(model, time % Math.PI * 2, glm.vec3(0.0, 1.0, 0.0));
-    cubeShader.setUniformMatrix4f("u_model", model.array);
-    rabbitDiffuse.bind();
-    rabbitVAO.draw();
+    cubeShader.setUniformMat4("u_view", view.array);
+    cubeShader.setUniformVec3("u_view_pos", viewPos.array);
+
+
+    planeObj.shade(cubeShader);
+    planeObj.draw();
+    
+    rabbitObj.update(dt);
+    rabbitObj.shade(cubeShader);
+    rabbitObj.draw();
+    
+    gl.activeTexture(gl.TEXTURE0);
     grassDiffuse.bind();
-
-
     instShader.use();
-    instShader.setUniformMatrix4f("u_view", view.array);
-    instShader.setUniform3f("u_view_pos", viewPos.array);
-    model = glm.mat4(1.0);
+    instShader.setUniformMat4("u_view", view.array);
+    instShader.setUniformVec3("u_view_pos", viewPos.array);
+    /*model = glm.mat4(1.0);
     model = glm.translate(model, glm.vec3(0.0, 0.0, 0.0))
     model = glm.scale(model, glm.vec3(4.0));
-    instShader.setUniformMatrix4f("u_model", model.array);
+    instShader.setUniformMat4("u_model", model.array);*/
     grass2VAO.draw();
-
-    /*model = glm.mat4(1.0);
-    model = glm.translate(model, glm.vec3(1.0, 0.0, 4.0))
-    model = glm.scale(model, glm.vec3(2.0));
-    cubeShader.setUniformMatrix4f("u_model", model.array);
-    grass2VAO.draw();*/
 
     requestAnimationFrame(drawScene);
     lastTime = time;

@@ -1,5 +1,5 @@
 import { VertexArray } from "../gen/core/vertexarray"
-export class Asset_rabbit extends VertexArray
+export class Mesh_rabbit extends VertexArray
 {
     constructor() {
         super([3, 2, 3],

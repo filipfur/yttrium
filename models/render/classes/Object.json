@@ -1,0 +1,134 @@
+{
+  "name": "Object",
+  "hash": "OzfsktmCK6vJhSGdvRyzemlocZGdWKPY",
+  "position": {
+    "x": -409,
+    "y": 194
+  },
+  "attributes": [
+    {
+      "name": "model",
+      "type": "any"
+    },
+    {
+      "name": "position",
+      "type": "any"
+    },
+    {
+      "name": "rotation",
+      "type": "any"
+    },
+    {
+      "name": "scale",
+      "type": "any"
+    },
+    {
+      "name": "modelInvalidated",
+      "type": "boolean"
+    },
+    {
+      "name": "updateCallback",
+      "type": "any"
+    },
+    {
+      "name": "time",
+      "type": "real"
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "mesh",
+          "type": "any"
+        },
+        {
+          "name": "textures",
+          "type": "any"
+        }
+      ],
+      "hash": "8A35eYaIdIoJ6dADka6sIrF1Lso6ZhEx"
+    },
+    {
+      "name": "updateModel",
+      "type": "void",
+      "parameters": [],
+      "hash": "p8IOFSfaqVR1xHcjOiZwDpN7KvvuR4DU"
+    },
+    {
+      "name": "shade",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "shaderProgram",
+          "type": "any"
+        }
+      ],
+      "hash": "CCuY6NckVWfbox8UQijiq33s2ZuhbDGk"
+    },
+    {
+      "name": "draw",
+      "type": "void",
+      "parameters": [],
+      "hash": "aGMnKEP6IVio8DYiJGDZzUciOWyxmruj"
+    },
+    {
+      "name": "update",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "dt",
+          "type": "real"
+        }
+      ],
+      "hash": "P0k5etJF10M72YwDSguVhck9QV95rnv0"
+    },
+    {
+      "name": "setPosition",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "position",
+          "type": "any"
+        }
+      ],
+      "hash": "a6DFKgudJYPn8ec6vhV006SxXimNDavK"
+    },
+    {
+      "name": "setRotation",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "rotation",
+          "type": "any"
+        }
+      ],
+      "hash": "znz3tkn2IZnctQff2gmgNM77O9BR4NkW"
+    },
+    {
+      "name": "setScale",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "scale",
+          "type": "any"
+        }
+      ],
+      "hash": "6qSioQOiL7wVs9AOd6PjupY7qx8LLbBk"
+    },
+    {
+      "name": "setUpdateCallback",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "updateCallback",
+          "type": "any"
+        }
+      ],
+      "hash": "ee5CmkPQGqaezZkdevkgykhSmcGURodU"
+    }
+  ],
+  "inherits": []
+}

@@ -49,7 +49,7 @@
       "hash": "wVSm7n43ZFUOeScvvwy7gDKu3Cza5XLh"
     },
     {
-      "name": "setUniform1f",
+      "name": "setUniformFloat",
       "type": "void",
       "parameters": [
         {
@@ -64,7 +64,7 @@
       "hash": "XUDceO8ddbAVCfFXaiH2OZ8wQ56g01dE"
     },
     {
-      "name": "setUniform1i",
+      "name": "setUniformInteger",
       "type": "void",
       "parameters": [
         {
@@ -79,7 +79,7 @@
       "hash": "GC33wGL0beT5OjxSLNWzaZ5spa3A8qBx"
     },
     {
-      "name": "setUniform3f",
+      "name": "setUniformVec3",
       "type": "void",
       "parameters": [
         {
@@ -94,7 +94,7 @@
       "hash": "43JK2VVTQDpfWTvrogYhgQVPk5UDzbIV"
     },
     {
-      "name": "setUniformMatrix4f",
+      "name": "setUniformMat4",
       "type": "void",
       "parameters": [
         {

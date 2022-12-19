@@ -1,0 +1,6 @@
+if(this.modelInvalidated)
+{
+    this.updateModel();
+}
+shaderProgram.use();
+shaderProgram.setUniformMat4("u_model", this.model.array);

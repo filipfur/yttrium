@@ -1,0 +1,13 @@
+{
+  "left": {
+    "className": "Object",
+    "cardinality": "*",
+    "phrase": "stores textures in"
+  },
+  "right": {
+    "className": "ImageTexture",
+    "cardinality": "0..1",
+    "phrase": "",
+    "package": "core"
+  }
+}

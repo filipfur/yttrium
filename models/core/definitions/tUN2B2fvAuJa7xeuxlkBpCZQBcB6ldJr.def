@@ -1,3 +1,4 @@
+this.bind();
 this.buffersInstancesIn = new InstanceBuffer(instanceData);
 const type = gl.FLOAT;
 const normalize = false;

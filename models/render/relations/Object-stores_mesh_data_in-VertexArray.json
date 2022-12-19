@@ -1,0 +1,13 @@
+{
+  "left": {
+    "className": "Object",
+    "phrase": "stores mesh data in",
+    "cardinality": "1"
+  },
+  "right": {
+    "className": "VertexArray",
+    "phrase": "",
+    "cardinality": "0..1",
+    "package": "core"
+  }
+}

@@ -1,0 +1,6 @@
+this.storesMeshDataIn = mesh;
+this.modelInvalidated = true;
+this.position = glm.vec3(0.0);
+this.rotation = glm.vec3(0.0);
+this.scale = glm.vec3(1.0);
+this.storesTexturesIn = textures;

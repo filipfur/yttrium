@@ -1,5 +1,5 @@
 import { VertexArray } from "../gen/core/vertexarray"
-export class Asset_grass2 extends VertexArray
+export class Mesh_grass2 extends VertexArray
 {
     constructor() {
         super([3, 2, 3],
