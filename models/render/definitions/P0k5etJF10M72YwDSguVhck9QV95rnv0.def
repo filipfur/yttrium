@@ -1,5 +1,0 @@
-if(this.updateCallback)
-{
-    this.updateCallback(this, this.time, dt);
-}
-this.time += dt;

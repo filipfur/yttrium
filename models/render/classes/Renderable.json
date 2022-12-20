@@ -1,0 +1,29 @@
+{
+  "name": "Renderable",
+  "hash": "IlTgHsB2tt8mnn7LEb8ZaIiZqvcubSiM",
+  "position": {
+    "x": -258,
+    "y": 550
+  },
+  "attributes": [],
+  "operations": [
+    {
+      "name": "shade",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "shaderProgram",
+          "type": "any"
+        }
+      ],
+      "hash": "o77rGP10BRPTJYDaHCRRT8mc8XKFPcyY"
+    },
+    {
+      "name": "draw",
+      "type": "void",
+      "parameters": [],
+      "hash": "ybdc6IAZK5wJBHjOZ1uH0jWzCqeRsmVD"
+    }
+  ],
+  "inherits": []
+}

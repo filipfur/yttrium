@@ -1,0 +1,43 @@
+{
+  "name": "Updateable",
+  "hash": "VLb1BXVU2FuzirtGbeqMdJqYBkt0R7W4",
+  "position": {
+    "x": -703,
+    "y": 505
+  },
+  "attributes": [
+    {
+      "name": "time",
+      "type": "real"
+    },
+    {
+      "name": "updateCallback",
+      "type": "any"
+    }
+  ],
+  "operations": [
+    {
+      "name": "update",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "dt",
+          "type": "real"
+        }
+      ],
+      "hash": "uHM8c0J70mYrGdpo6zGV1CS4Xp8hoA2g"
+    },
+    {
+      "name": "setUpdateCallback",
+      "type": "void",
+      "parameters": [
+        {
+          "name": "updateCallback",
+          "type": "any"
+        }
+      ],
+      "hash": "xGuwdG7FkNWNicJ2Tadmazux1zZWgWG1"
+    }
+  ],
+  "inherits": []
+}

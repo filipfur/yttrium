@@ -1,0 +1,13 @@
+{
+  "left": {
+    "className": "Rendering",
+    "cardinality": "1",
+    "phrase": "uses"
+  },
+  "right": {
+    "className": "ShaderProgram",
+    "cardinality": "0..1",
+    "phrase": "",
+    "package": "core"
+  }
+}

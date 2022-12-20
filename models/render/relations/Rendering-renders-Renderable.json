@@ -1,0 +1,12 @@
+{
+  "left": {
+    "className": "Rendering",
+    "cardinality": "*",
+    "phrase": "renders"
+  },
+  "right": {
+    "className": "Renderable",
+    "cardinality": "0..1",
+    "phrase": ""
+  }
+}

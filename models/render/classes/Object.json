@@ -2,7 +2,7 @@
   "name": "Object",
   "hash": "OzfsktmCK6vJhSGdvRyzemlocZGdWKPY",
   "position": {
-    "x": -409,
+    "x": -413,
     "y": 194
   },
   "attributes": [
@@ -25,14 +25,6 @@
     {
       "name": "modelInvalidated",
       "type": "boolean"
-    },
-    {
-      "name": "updateCallback",
-      "type": "any"
-    },
-    {
-      "name": "time",
-      "type": "real"
     }
   ],
   "operations": [
@@ -75,17 +67,6 @@
       "hash": "aGMnKEP6IVio8DYiJGDZzUciOWyxmruj"
     },
     {
-      "name": "update",
-      "type": "void",
-      "parameters": [
-        {
-          "name": "dt",
-          "type": "real"
-        }
-      ],
-      "hash": "P0k5etJF10M72YwDSguVhck9QV95rnv0"
-    },
-    {
       "name": "setPosition",
       "type": "void",
       "parameters": [
@@ -117,18 +98,16 @@
         }
       ],
       "hash": "6qSioQOiL7wVs9AOd6PjupY7qx8LLbBk"
-    },
-    {
-      "name": "setUpdateCallback",
-      "type": "void",
-      "parameters": [
-        {
-          "name": "updateCallback",
-          "type": "any"
-        }
-      ],
-      "hash": "ee5CmkPQGqaezZkdevkgykhSmcGURodU"
     }
   ],
-  "inherits": []
+  "inherits": [
+    {
+      "name": "Updateable",
+      "type": "public"
+    },
+    {
+      "name": "Renderable",
+      "type": "public"
+    }
+  ]
 }
