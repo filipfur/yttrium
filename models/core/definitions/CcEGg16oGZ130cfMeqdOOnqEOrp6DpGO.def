@@ -1,0 +1,1 @@
+this.internal = gl.createRenderbuffer();

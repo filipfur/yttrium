@@ -6,6 +6,67 @@
     "y": 802
   },
   "attributes": [],
-  "operations": [],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "shaderProgram",
+          "type": {
+            "name": "ShaderProgram",
+            "package": "core"
+          }
+        }
+      ],
+      "hash": "e7khWAjhr8efp33G71zz0jPPqSdIsPfM"
+    },
+    {
+      "name": "addRenderable",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "renderable",
+          "type": {
+            "name": "Renderable",
+            "package": "render"
+          }
+        }
+      ],
+      "hash": "Rq3aW7uVLYXlTjM9gULCWsOxiNMq88h5"
+    },
+    {
+      "name": "setRenderables",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "renderables",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "egvEfOZZfuHQQTHEgFwJ3mxVWJPouhRQ"
+    },
+    {
+      "name": "render",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "g8gS3v9lUtcgMEWKzZ0yrSNUVOgB6jnl"
+    }
+  ],
   "inherits": []
 }

@@ -1,0 +1,3 @@
+let attachments = Object.keys(this.texturesByAttachment).map( attachment => (Number(attachment)));
+//console.log("drawbuffers: " + attachments);
+gl.drawBuffers(attachments);

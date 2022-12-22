@@ -2,33 +2,39 @@
   "name": "ImageTexture",
   "hash": "y1nLeebQfq1L4YLfAnRP8SnIxT86OgpE",
   "position": {
-    "x": -226,
-    "y": 569
+    "x": 44,
+    "y": 457
   },
-  "attributes": [
-    {
-      "name": "internal",
-      "type": {"name": "any", "package": "primitives"}
-    }
-  ],
+  "attributes": [],
   "operations": [
     {
       "name": "constructor",
-      "type": {"name": "void", "package": "primitives"},
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "imagePath",
-          "type": {"name": "string", "package": "primitives"}
+          "type": {
+            "name": "string",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "goitIXkgPf7kPTWgErwqGVaZYHn1ge2s"
-    },
-    {
-      "name": "bind",
-      "type": {"name": "void", "package": "primitives"},
-      "parameters": [],
-      "hash": "zxyskPDsZtEq71HIveIyGGGxNwYiPSfz"
     }
   ],
-  "inherits": []
+  "inherits": [
+    {
+      "name": {
+        "name": "Texture",
+        "package": "core"
+      },
+      "type": {
+        "name": "public",
+        "package": "visibility"
+      }
+    }
+  ]
 }

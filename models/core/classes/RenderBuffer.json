@@ -1,0 +1,107 @@
+{
+  "name": "RenderBuffer",
+  "hash": "EAOZKCkwQ2tO6GkWdBD37Txd8CiHfWFC",
+  "position": {
+    "x": -174,
+    "y": 338
+  },
+  "attributes": [
+    {
+      "name": "internal",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "CcEGg16oGZ130cfMeqdOOnqEOrp6DpGO"
+    },
+    {
+      "name": "bind",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "aKqvbruvJx9ZID5LjrpNfa7ZbrgcXA6e"
+    },
+    {
+      "name": "storage",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "width",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "height",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "internalFormat",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "rama4CmlPrxQul65VCjKGYzZKGoBHO8S"
+    },
+    {
+      "name": "storageMultisample",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "width",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "height",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "internalFormat",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "samples",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "NlwsjpYkycuexRAwYRxAMh7IzE2m81p3"
+    }
+  ],
+  "inherits": []
+}

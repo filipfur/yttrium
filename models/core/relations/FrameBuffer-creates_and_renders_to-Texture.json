@@ -1,0 +1,12 @@
+{
+  "left": {
+    "className": "FrameBuffer",
+    "cardinality": "*",
+    "phrase": "creates and renders to"
+  },
+  "right": {
+    "className": "Texture",
+    "cardinality": "0..1",
+    "phrase": ""
+  }
+}

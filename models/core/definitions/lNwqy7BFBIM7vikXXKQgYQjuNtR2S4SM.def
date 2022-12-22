@@ -1,0 +1,2 @@
+gl.texImage2D(gl.TEXTURE_2D, 0, internalFormat, width, height, 0, format, type,
+    data == null ? null : (type == gl.FLOAT ? new Float32Array(data) : new Uint8Array(data)));

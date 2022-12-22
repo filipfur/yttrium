@@ -1,0 +1,12 @@
+{
+  "left": {
+    "className": "FrameBuffer",
+    "cardinality": "0..1",
+    "phrase": "uses"
+  },
+  "right": {
+    "className": "RenderBuffer",
+    "cardinality": "0..1",
+    "phrase": ""
+  }
+}

@@ -1,0 +1,12 @@
+if(this.uses == null)
+{
+    console.log("No render buffer has been created.");
+    return;
+}
+gl.framebufferRenderbuffer(gl.FRAMEBUFFER, attachment, gl.RENDERBUFFER, this.uses.internal);
+let fboStatus = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
+if(fboStatus != gl.FRAMEBUFFER_COMPLETE)
+{
+    console.log("Failed to bind framebuffer with renderbuffer.")
+    console.log(fboStatus);
+}

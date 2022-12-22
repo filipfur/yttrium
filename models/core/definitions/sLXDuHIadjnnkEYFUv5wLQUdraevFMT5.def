@@ -1,0 +1,4 @@
+this.internal = gl.createFramebuffer();
+this.createsAndRendersTo = [];
+this.texturesByAttachment = {};
+this.uses = null;

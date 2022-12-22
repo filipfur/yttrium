@@ -1,0 +1,138 @@
+{
+  "name": "Texture",
+  "position": {
+    "x": 50,
+    "y": 600
+  },
+  "attributes": [
+    {
+      "name": "internal",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "eXC1JOITLZKXATBRn0Tf5pQ5y4m3A6QY"
+    },
+    {
+      "name": "bind",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "WZNSJ7bKTfP4W6ot0lg64rackKqmLu69"
+    },
+    {
+      "name": "textureImage2D",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "width",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "height",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "internalFormat",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "format",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "type",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "data",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "lNwqy7BFBIM7vikXXKQgYQjuNtR2S4SM"
+    },
+    {
+      "name": "setTextureFilter",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "filterMin",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "filterMag",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "5coaBiDZ26l8LjnrxF0LioeQwPP7I0Qt"
+    },
+    {
+      "name": "setTextureWrap",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "wrapS",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "wrapT",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "FzDmAnBdxFjQPKSi4eXODHIGkfcWtMYw"
+    }
+  ],
+  "inherits": [],
+  "hash": "yvGBVsMvL6T9aRb1OGeSGMp4gyPOaoZj"
+}

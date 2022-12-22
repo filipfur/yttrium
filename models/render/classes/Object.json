@@ -164,6 +164,16 @@
         "name": "public",
         "package": "visibility"
       }
+    },
+    {
+      "name": {
+        "name": "Renderable",
+        "package": "render"
+      },
+      "type": {
+        "name": "public",
+        "package": "visibility" 
+      }
     }
   ]
 }

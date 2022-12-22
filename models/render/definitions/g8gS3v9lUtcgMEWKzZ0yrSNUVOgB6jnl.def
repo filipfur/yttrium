@@ -1,0 +1,4 @@
+this.renders.forEach((renderable) => {
+    renderable.shade(this.uses);
+    renderable.draw();
+})

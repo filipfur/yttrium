@@ -1,0 +1,4 @@
+this.uses = new RenderBuffer();
+this.uses.bind();
+this.uses.storage(this.width, this.height, internalFormat);
+this.attachRenderBuffer(attachment);

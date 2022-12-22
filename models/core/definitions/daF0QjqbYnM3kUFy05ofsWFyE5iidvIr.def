@@ -1,0 +1,4 @@
+this.uses = new RenderBuffer();
+this.uses.bind();
+this.uses.storageMultisample(this.width, this.height, internalFormat, samples);
+this.attachRenderBuffer(attachment);

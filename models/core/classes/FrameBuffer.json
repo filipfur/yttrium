@@ -1,0 +1,219 @@
+{
+  "name": "FrameBuffer",
+  "hash": "UeFhNL1AJ4m8cLkZiqSJTAkGsHM7fTP6",
+  "position": {
+    "x": -425,
+    "y": 454
+  },
+  "attributes": [
+    {
+      "name": "internal",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "width",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "height",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "texturesByAttachment",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "width",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "height",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "sLXDuHIadjnnkEYFUv5wLQUdraevFMT5"
+    },
+    {
+      "name": "bind",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "W6NxqHiqozMtmNTj33haq1lTbg496Qmo"
+    },
+    {
+      "name": "createTexture",
+      "type": {
+        "name": "integer",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "attachment",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "internalFormat",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "format",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "type",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "V2DUgEjcCLD7dKfcl69H0ompLaQBnwS6"
+    },
+    {
+      "name": "bindTexture",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "attachment",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "zHCppjs9JyfelRR6xdMtDluE3vUBuiKK"
+    },
+    {
+      "name": "declareDrawBuffers",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "RxCw48STbq75ozDqQ0QFZtbIkhSja9se"
+    },
+    {
+      "name": "unbind",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "xxR5eilAFFy9Kq24IvpGGex6mUfzXQUd"
+    },
+    {
+      "name": "createRenderBuffer",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "attachment",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "internalFormat",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "4NGtzMNGtHEmdZwpLpotONE6Wc5sXE0s"
+    },
+    {
+      "name": "attachRenderBuffer",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "attachment",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "7soxsWwVJ4MeHCw46r3EyP4FMZdf3yp5"
+    },
+    {
+      "name": "createRenderBufferMultisample",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "attachment",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "internalFormat",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "samples",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "daF0QjqbYnM3kUFy05ofsWFyE5iidvIr"
+    }
+  ],
+  "inherits": []
+}

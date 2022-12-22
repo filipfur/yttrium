@@ -1,0 +1,1 @@
+gl.bindFramebuffer(gl.FRAMEBUFFER, this.internal);

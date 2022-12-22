@@ -1,0 +1,8 @@
+let tex = new Texture();
+tex.bind();
+tex.setTextureWrap(gl.CLAMP_TO_EDGE, gl.CLAMP_TO_EDGE);
+tex.setTextureFilter(gl.NEAREST, gl.NEAREST);
+tex.textureImage2D(this.width, this.height, internalFormat, format, type, null);
+gl.framebufferTexture2D(gl.FRAMEBUFFER, attachment, gl.TEXTURE_2D, tex.internal, 0);
+this.createsAndRendersTo.push(tex);
+this.texturesByAttachment[attachment] = tex;
