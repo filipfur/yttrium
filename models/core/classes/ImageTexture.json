@@ -8,24 +8,24 @@
   "attributes": [
     {
       "name": "internal",
-      "type": "any"
+      "type": {"name": "any", "package": "primitives"}
     }
   ],
   "operations": [
     {
       "name": "constructor",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "imagePath",
-          "type": "string"
+          "type": {"name": "string", "package": "primitives"}
         }
       ],
       "hash": "goitIXkgPf7kPTWgErwqGVaZYHn1ge2s"
     },
     {
       "name": "bind",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [],
       "hash": "zxyskPDsZtEq71HIveIyGGGxNwYiPSfz"
     }

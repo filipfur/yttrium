@@ -2,25 +2,34 @@
   "name": "Renderable",
   "hash": "IlTgHsB2tt8mnn7LEb8ZaIiZqvcubSiM",
   "position": {
-    "x": -258,
-    "y": 550
+    "x": -208,
+    "y": 583
   },
   "attributes": [],
   "operations": [
     {
       "name": "shade",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "shaderProgram",
-          "type": "any"
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "o77rGP10BRPTJYDaHCRRT8mc8XKFPcyY"
     },
     {
       "name": "draw",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [],
       "hash": "ybdc6IAZK5wJBHjOZ1uH0jWzCqeRsmVD"
     }

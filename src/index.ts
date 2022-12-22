@@ -158,7 +158,7 @@ window.onload = () => {
 
   const rabbitMesh = new Mesh_rabbit();
   const rabbitObj = new Object(rabbitMesh, [rabbitDiffuse]);
-  rabbitObj.setUpdateCallback((obj, time, dt) => {
+  rabbitObj.setUpdateCallback((obj:any, time:number, dt:number) => {
     obj.setPosition(obj.position.add(glm.vec3(0.0, 0.0, dt)));
   });
 

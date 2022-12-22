@@ -8,32 +8,59 @@
   "attributes": [
     {
       "name": "time",
-      "type": "real"
+      "type": {
+        "name": "real",
+        "package": "primitives"
+      }
     },
     {
       "name": "updateCallback",
-      "type": "any"
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
     }
   ],
   "operations": [
     {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "RV8Bzm48PkxVXseqMZvldb50pFU8pBII"
+    },
+    {
       "name": "update",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "dt",
-          "type": "real"
+          "type": {
+            "name": "real",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "uHM8c0J70mYrGdpo6zGV1CS4Xp8hoA2g"
     },
     {
       "name": "setUpdateCallback",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "updateCallback",
-          "type": "any"
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "xGuwdG7FkNWNicJ2Tadmazux1zZWgWG1"

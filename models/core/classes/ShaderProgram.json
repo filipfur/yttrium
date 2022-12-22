@@ -8,102 +8,102 @@
   "attributes": [
     {
       "name": "internal",
-      "type": "any"
+      "type": {"name": "any", "package": "primitives"}
     },
     {
       "name": "locations",
-      "type": "any"
+      "type": {"name": "any", "package": "primitives"}
     }
   ],
   "operations": [
     {
       "name": "constructor",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "vertexSrc",
-          "type": "string"
+          "type": {"name": "string", "package": "primitives"}
         },
         {
           "name": "fragmentSrc",
-          "type": "string"
+          "type": {"name": "string", "package": "primitives"}
         }
       ],
       "hash": "FASrysCVfdDDkD3uEELPb062Ib1gI4Mc"
     },
     {
       "name": "use",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [],
       "hash": "LcXvPgM52KHeOPiv1S9t8bWjJ4idPE4d"
     },
     {
       "name": "loadLocation",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "name",
-          "type": "string"
+          "type": {"name": "string", "package": "primitives"}
         }
       ],
       "hash": "wVSm7n43ZFUOeScvvwy7gDKu3Cza5XLh"
     },
     {
       "name": "setUniformFloat",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "name",
-          "type": "string"
+          "type": {"name": "string", "package": "primitives"}
         },
         {
           "name": "value",
-          "type": "real"
+          "type": {"name": "real", "package": "primitives"}
         }
       ],
       "hash": "XUDceO8ddbAVCfFXaiH2OZ8wQ56g01dE"
     },
     {
       "name": "setUniformInteger",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "name",
-          "type": "string"
+          "type": {"name": "string", "package": "primitives"}
         },
         {
           "name": "value",
-          "type": "integer"
+          "type": {"name": "integer", "package": "primitives"}
         }
       ],
       "hash": "GC33wGL0beT5OjxSLNWzaZ5spa3A8qBx"
     },
     {
       "name": "setUniformVec3",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "name",
-          "type": "string"
+          "type": {"name": "string", "package": "primitives"}
         },
         {
           "name": "value",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         }
       ],
       "hash": "43JK2VVTQDpfWTvrogYhgQVPk5UDzbIV"
     },
     {
       "name": "setUniformMat4",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "name",
-          "type": "string"
+          "type": {"name": "string", "package": "primitives"}
         },
         {
           "name": "matrix",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         }
       ],
       "hash": "nAM1YmRhgKgCZfkS7jVzvyQ3h8zN9da4"

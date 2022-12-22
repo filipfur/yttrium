@@ -8,28 +8,28 @@
   "attributes": [
     {
       "name": "internal",
-      "type": "any"
+      "type": {"name": "any", "package": "primitives"}
     },
     {
       "name": "count",
-      "type": "integer"
+      "type": {"name": "integer", "package": "primitives"}
     }
   ],
   "operations": [
     {
       "name": "constructor",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "vertices",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         }
       ],
       "hash": "XwBRmG5lL81YnTpb7eYyblFGfvmB7szO"
     },
     {
       "name": "bind",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [],
       "hash": "r4h6gwRupD7KlVllzbUGNRFjxE5Gv1db"
     }

@@ -8,21 +8,21 @@
   "attributes": [
     {
       "name": "internal",
-      "type": "any"
+      "type": {"name": "any", "package": "primitives"}
     }
   ],
   "operations": [
     {
       "name": "constructor",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "type",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         },
         {
           "name": "source",
-          "type": "string"
+          "type": {"name": "string", "package": "primitives"}
         }
       ],
       "hash": "aHYl1LGnP00XC2TyPW83nzQ4thyjwoEa"

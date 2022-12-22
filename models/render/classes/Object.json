@@ -2,99 +2,153 @@
   "name": "Object",
   "hash": "OzfsktmCK6vJhSGdvRyzemlocZGdWKPY",
   "position": {
-    "x": -413,
-    "y": 194
+    "x": -441,
+    "y": 145
   },
   "attributes": [
     {
       "name": "model",
-      "type": "any"
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
     },
     {
       "name": "position",
-      "type": "any"
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
     },
     {
       "name": "rotation",
-      "type": "any"
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
     },
     {
       "name": "scale",
-      "type": "any"
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
     },
     {
       "name": "modelInvalidated",
-      "type": "boolean"
+      "type": {
+        "name": "boolean",
+        "package": "primitives"
+      }
     }
   ],
   "operations": [
     {
       "name": "constructor",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "mesh",
-          "type": "any"
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
         },
         {
           "name": "textures",
-          "type": "any"
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "8A35eYaIdIoJ6dADka6sIrF1Lso6ZhEx"
     },
     {
       "name": "updateModel",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [],
       "hash": "p8IOFSfaqVR1xHcjOiZwDpN7KvvuR4DU"
     },
     {
       "name": "shade",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "shaderProgram",
-          "type": "any"
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "CCuY6NckVWfbox8UQijiq33s2ZuhbDGk"
     },
     {
       "name": "draw",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [],
       "hash": "aGMnKEP6IVio8DYiJGDZzUciOWyxmruj"
     },
     {
       "name": "setPosition",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "position",
-          "type": "any"
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "a6DFKgudJYPn8ec6vhV006SxXimNDavK"
     },
     {
       "name": "setRotation",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "rotation",
-          "type": "any"
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "znz3tkn2IZnctQff2gmgNM77O9BR4NkW"
     },
     {
       "name": "setScale",
-      "type": "void",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "scale",
-          "type": "any"
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "6qSioQOiL7wVs9AOd6PjupY7qx8LLbBk"
@@ -102,12 +156,14 @@
   ],
   "inherits": [
     {
-      "name": "Updateable",
-      "type": "public"
-    },
-    {
-      "name": "Renderable",
-      "type": "public"
+      "name": {
+        "name": "Updateable",
+        "package": "render"
+      },
+      "type": {
+        "name": "public",
+        "package": "visibility"
+      }
     }
   ]
 }

@@ -7,28 +7,28 @@
   "attributes": [
     {
       "name": "internal",
-      "type": "any"
+      "type": {"name": "any", "package": "primitives"}
     },
     {
       "name": "count",
-      "type": "integer"
+      "type": {"name": "integer", "package": "primitives"}
     }
   ],
   "operations": [
     {
       "name": "constructor",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "instances",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         }
       ],
       "hash": "2FGtKg49J9vR6lPExEeHLgDliMqS7BC3"
     },
     {
       "name": "bind",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [],
       "hash": "EfbjMP2gBIKW2Y5MBCO622lhNnuNJj2p"
     }

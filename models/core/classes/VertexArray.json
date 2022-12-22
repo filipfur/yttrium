@@ -8,64 +8,64 @@
   "attributes": [
     {
       "name": "internal",
-      "type": "any"
+      "type": {"name": "any", "package": "primitives"}
     },
     {
       "name": "mode",
-      "type": "any"
+      "type": {"name": "any", "package": "primitives"}
     },
     {
       "name": "attributes",
-      "type": "any"
+      "type": {"name": "any", "package": "primitives"}
     },
     {
       "name": "instanceComponents",
-      "type": "integer"
+      "type": {"name": "integer", "package": "primitives"}
     }
   ],
   "operations": [
     {
       "name": "constructor",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "attributes",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         },
         {
           "name": "vertices",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         },
         {
           "name": "indices",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         }
       ],
       "hash": "MtnJ4O0hL6xybWhP1zNWVkPydQGJ8qdK"
     },
     {
       "name": "bind",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [],
       "hash": "PIRkcWpyNX3lkmY9E1fB7hf6jyO9r15T"
     },
     {
       "name": "draw",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [],
       "hash": "0fyDxoTBNJJv0CHdVLai1r0zmm4yhqBU"
     },
     {
       "name": "setInstanceAttributes",
-      "type": "void",
+      "type": {"name": "void", "package": "primitives"},
       "parameters": [
         {
           "name": "instanceAttributes",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         },
         {
           "name": "instanceData",
-          "type": "any"
+          "type": {"name": "any", "package": "primitives"}
         }
       ],
       "hash": "tUN2B2fvAuJa7xeuxlkBpCZQBcB6ldJr"
