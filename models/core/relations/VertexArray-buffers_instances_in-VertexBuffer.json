@@ -1,0 +1,12 @@
+{
+  "left": {
+    "className": "VertexArray",
+    "cardinality": "0..1",
+    "phrase": "buffers instances in"
+  },
+  "right": {
+    "className": "VertexBuffer",
+    "cardinality": "0..1",
+    "phrase": ""
+  }
+}

@@ -1,5 +1,8 @@
-this.storesTexturesIn.forEach((texture, i) => {
-    gl.activeTexture(gl.TEXTURE0 + i);
-    texture.bind();
-});
+if(this.storesTexturesIn)
+{
+    this.storesTexturesIn.forEach((texture, i) => {
+        gl.activeTexture(gl.TEXTURE0 + i);
+        texture.bind();
+    });
+}
 this.storesMeshDataIn.draw();

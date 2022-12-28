@@ -1,0 +1,2 @@
+const ndx = this.hasChildren.indexOf(child);
+this.hasChildren.splice(ndx, 1);

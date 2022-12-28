@@ -1,0 +1,19 @@
+this.inverseBindMatrices = [];
+this.jointMatrices = [];
+// allocate enough space for one matrix per joint
+this.jointData = new Float32Array(joints.length * 16);
+// create views for each joint and inverseBindMatrix
+for (let i = 0; i < joints.length; ++i) {
+    let farr = new Float32Array(
+        inverseBindMatrixData.buffer,
+        inverseBindMatrixData.byteOffset + Float32Array.BYTES_PER_ELEMENT * 16 * i,
+        16)
+    //console.log(...farr);
+    this.inverseBindMatrices.push(glm.mat4(...farr));
+    farr = new Float32Array(
+        this.jointData.buffer,
+        Float32Array.BYTES_PER_ELEMENT * 16 * i,
+        16);
+    
+    this.jointMatrices.push(glm.mat4(...farr));
+}

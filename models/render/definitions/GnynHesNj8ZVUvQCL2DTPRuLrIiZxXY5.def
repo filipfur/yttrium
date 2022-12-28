@@ -1,0 +1,29 @@
+const source = this.hasSource;
+if (source) {
+    this.localMatrix = source.getMatrix();
+}
+
+if(this.first)
+{
+    console.log("name: " + this.name);
+    console.log("first: " + this.localMatrix.array);
+    console.log("pos: " + source?.position);
+    console.log("rot: " + source?.rotation);
+    console.log("quat.w: " + source?.rotation.w)
+    console.log("scale: " + source?.scale);
+    this.first = false;
+}
+
+if (parentWorldMatrix) {
+// a matrix was passed in so do the math
+    this.worldMatrix = parentWorldMatrix["*"](this.localMatrix);
+} else {
+// no matrix was passed in so just copy local to world
+    this.worldMatrix = this.localMatrix;
+}
+
+// now process all the children
+const worldMatrix = this.worldMatrix;
+for (const child of this.hasChildren) {
+    child.updateWorldMatrix(worldMatrix);
+}

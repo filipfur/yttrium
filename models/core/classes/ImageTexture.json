@@ -20,6 +20,20 @@
             "name": "string",
             "package": "primitives"
           }
+        },
+        {
+          "name": "internalFormat",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "format",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "goitIXkgPf7kPTWgErwqGVaZYHn1ge2s"

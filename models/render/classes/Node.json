@@ -1,0 +1,143 @@
+{
+  "name": "Node",
+  "hash": "FZBTSYYSRbY6gvqnuj3QuUtAi533SL9R",
+  "position": {
+    "x": 118,
+    "y": 169
+  },
+  "attributes": [
+    {
+      "name": "name",
+      "type": {
+        "name": "string",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "localMatrix",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "worldMatrix",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "type": {
+            "name": "string",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "source",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "eR42DuKLyOqi1yd398gUJEL84wMKpTmC"
+    },
+    {
+      "name": "setParent",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "parent",
+          "type": {
+            "name": "Node",
+            "package": "render"
+          }
+        }
+      ],
+      "hash": "FKXbS9PWW29n11gkpWYLbU6Nma9O8qWa"
+    },
+    {
+      "name": "updateWorldMatrix",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "parentWorldMatrix",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "GnynHesNj8ZVUvQCL2DTPRuLrIiZxXY5"
+    },
+    {
+      "name": "traverse",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "func",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "IVnya6LCp2IK9DKV36K0pOsLmTfHuCml"
+    },
+    {
+      "name": "addChild",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "child",
+          "type": {
+            "name": "Node",
+            "package": "render"
+          }
+        }
+      ],
+      "hash": "lsDAcbAEpV3PxoYJHADq2uddcOcjderf"
+    },
+    {
+      "name": "removeChild",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "child",
+          "type": {
+            "name": "Node",
+            "package": "render"
+          }
+        }
+      ],
+      "hash": "lG8YEE1Gku3MtVPMPNbhFFo22E6yF1Pu"
+    }
+  ],
+  "inherits": []
+}

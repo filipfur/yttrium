@@ -2,34 +2,56 @@
   "name": "ElementBuffer",
   "hash": "CJdkft6nns78CdOot6vn6QolUtSBgy4R",
   "position": {
-    "x": -514,
-    "y": 976
+    "x": -732,
+    "y": 996
   },
   "attributes": [
     {
       "name": "internal",
-      "type": {"name": "any", "package": "primitives"}
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
     },
     {
       "name": "count",
-      "type": {"name": "integer", "package": "primitives"}
+      "type": {
+        "name": "integer",
+        "package": "primitives"
+      }
     }
   ],
   "operations": [
     {
       "name": "constructor",
-      "type": {"name": "void", "package": "primitives"},
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "indices",
-          "type": {"name": "any", "package": "primitives"}
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "count",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "hqsPn7cTkPn0PKfUW8E7QOD2kHC6ukWI"
     },
     {
       "name": "bind",
-      "type": {"name": "void", "package": "primitives"},
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [],
       "hash": "rUnkSbslQL9N7otu7oCIGu1EdTSw0YH5"
     }

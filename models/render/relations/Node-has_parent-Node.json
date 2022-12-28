@@ -1,0 +1,12 @@
+{
+  "left": {
+    "className": "Node",
+    "phrase": "has parent",
+    "cardinality": "0..1"
+  },
+  "right": {
+    "className": "Node",
+    "phrase": "has children",
+    "cardinality": "*"
+  }
+}

@@ -1,0 +1,8 @@
+/*const tmat = glm.translate(glm.mat4(1.0), this.position);
+const rmat = glm.toMat4(this.rotation);
+const smat = glm.scale(glm.mat4(1.0), this.scale);
+return (tmat["*"](rmat))["*"](smat);*/
+let model = glm.translate(glm.mat4(1.0), this.position);
+model = model["*"](glm.toMat4(this.rotation));
+model = glm.scale(model, this.scale);
+return model;

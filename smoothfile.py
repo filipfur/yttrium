@@ -22,6 +22,12 @@ def _translatecore():
 def _translaterender():
     return modeltosrc.translatets(PATH_MODELS_RENDER, PATH_GEN, "render")
 
+def _allmesh():
+    for name in os.listdir('assets/'):
+        if name.endswith(".obj"):
+            #print(os.path.join("assets", name))
+            _mesh(os.path.join("assets", name))
+
 def _mesh(filepath, uvx=1):
     file = open(filepath, 'r')
     lines = file.readlines()
@@ -56,26 +62,31 @@ def _mesh(filepath, uvx=1):
                 indices.append([int(x) for x in x.split("/")])
             outIndices.append(len(outIndices))
 
-    #print("len(vertices) :" + str(len(vertices)))
+    print("len(vertices) :" + str(len(vertices)))
+    print("len(uvs) :" + str(len(uvs)))
+    print("len(normals) :" + str(len(normals)))
 
     for i in range(len(indices)):
         #print(f"index={index}")
         outVertices.append(vertices[indices[i][0] - 1]) # Positions
-        outVertices.append(uvs[indices[i][1] - 1]) # UVs
         outVertices.append(normals[indices[i][2] - 1]) # Normals
+        outVertices.append(uvs[indices[i][1] - 1]) # UVs
+
 
 
     #indices.append(len(indices))
     name = os.path.basename(filepath)
     name = name[0:name.find(".")]
 
+    count = len(indices) * 8
+
     content = ['import { VertexArray } from "../gen/core/vertexarray"',
         f"export class Mesh_{name} extends VertexArray",
         '{',
         '    constructor() {',
-        '        super([3, 2, 3],',
-        '            [' + ", ".join([", ".join(x) for x in outVertices]) + '],',
-        '            [' + ", ".join([str(x) for x in []]) + ']);',
+        '        super();',
+        '        this.createVertexBuffer([3, 3, 2], new Float32Array([' + ", ".join([", ".join(x) for x in outVertices]) + f']), {count}, gl.FLOAT, 0, 0);',
+#        '            [' + ", ".join([str(x) for x in []]) + ']);',
         '    }',
         '}']
 

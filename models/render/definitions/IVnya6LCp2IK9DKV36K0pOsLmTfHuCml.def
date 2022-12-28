@@ -1,0 +1,5 @@
+func(this);
+for (const child of this.hasChildren)
+{
+    child.traverse(func);
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Skin",
+  "hash": "R0Tr3PrfRBy7wr54Mpn5VSRInnbH69Un",
+  "position": {
+    "x": 458,
+    "y": 274
+  },
+  "attributes": [
+    {
+      "name": "joints",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "inverseBindMatrices",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "jointMatrices",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "jointData",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "joints",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "inverseBindMatrixData",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "s8Zl400YICdSoSZuLq4dhxRKGv3SR6DZ"
+    },
+    {
+      "name": "update",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "node",
+          "type": {
+            "name": "Node",
+            "package": "render"
+          }
+        }
+      ],
+      "hash": "Jc7pYZqJh2E6pHvZpxVvoff0IZGfdZD9"
+    }
+  ],
+  "inherits": []
+}

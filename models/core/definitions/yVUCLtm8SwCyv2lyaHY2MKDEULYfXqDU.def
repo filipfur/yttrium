@@ -1,0 +1,37 @@
+const normalize = false; // don't normalize
+let stride = 0; // how many bytes to get from one set of values to the next
+// 0 = use type and numComponents above
+let offset = 0; // how many bytes inside the buffer to start from
+//gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBuffer);
+let components = 0;
+const typeSize = (type == gl.FLOAT ? 4 : 1);
+for(let i in attributes)
+{
+    stride += attributes[i] * typeSize;
+    components += attributes[i];
+}
+let vertexBuffer = new VertexBuffer(vertices, count);
+
+vertexBuffer.bind();
+let n = layoutOffset;
+for(let i in attributes)
+{
+    let I = Number(i);
+    gl.enableVertexAttribArray(n + I);
+    if(type == gl.FLOAT)
+    {
+        gl.vertexAttribPointer(n + I, attributes[i], type, normalize, stride, offset);
+    }
+    else
+    {
+        gl.vertexAttribIPointer(n + I, attributes[i], type, stride, offset);
+    }
+    offset += attributes[i] * typeSize;
+    if(attribDivisor > 0)
+    {
+        gl.vertexAttribDivisor(n + I, attribDivisor);
+    }
+}
+
+this.buffersVerticesIn.push(vertexBuffer);
+return vertexBuffer;

@@ -1,0 +1,4 @@
+let elementBuffer = new ElementBuffer(indices, count);
+this.mode = gl.ELEMENT_ARRAY_BUFFER;
+this.buffersIndicesIn = elementBuffer;
+return elementBuffer;

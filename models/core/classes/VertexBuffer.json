@@ -2,34 +2,56 @@
   "name": "VertexBuffer",
   "hash": "TtQXCwBRwhAi9epGs5ddVAdGvfmGZz7k",
   "position": {
-    "x": -320,
+    "x": -318,
     "y": 769
   },
   "attributes": [
     {
       "name": "internal",
-      "type": {"name": "any", "package": "primitives"}
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
     },
     {
       "name": "count",
-      "type": {"name": "integer", "package": "primitives"}
+      "type": {
+        "name": "integer",
+        "package": "primitives"
+      }
     }
   ],
   "operations": [
     {
       "name": "constructor",
-      "type": {"name": "void", "package": "primitives"},
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [
         {
           "name": "vertices",
-          "type": {"name": "any", "package": "primitives"}
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "count",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
         }
       ],
       "hash": "XwBRmG5lL81YnTpb7eYyblFGfvmB7szO"
     },
     {
       "name": "bind",
-      "type": {"name": "void", "package": "primitives"},
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
       "parameters": [],
       "hash": "r4h6gwRupD7KlVllzbUGNRFjxE5Gv1db"
     }

@@ -1,0 +1,74 @@
+{
+  "name": "TRS",
+  "hash": "a7vtlitgqtVtyzj1rXGIUl3xnU7BIKxT",
+  "position": {
+    "x": 220,
+    "y": 545
+  },
+  "attributes": [
+    {
+      "name": "position",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "rotation",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "scale",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "position",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "rotation",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "scale",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "q7CJzqgjcB7mtWqWZfmat6FYkSS6Lh2V"
+    },
+    {
+      "name": "getMatrix",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "weULgszE29j0vCdySR6DEPKluITvOOQT"
+    }
+  ],
+  "inherits": []
+}

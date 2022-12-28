@@ -1,0 +1,10 @@
+if(this.hasParent)
+{
+    this.hasParent.removeChild(this);
+    this.hasParent = null;
+}
+if(parent)
+{
+    parent.addChild(this);
+    this.hasParent = parent;
+}

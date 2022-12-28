@@ -5,23 +5,23 @@ if(this.mode == gl.ARRAY_BUFFER)
     if(this.buffersInstancesIn)
     {
         let n:number = this.buffersInstancesIn ? (this.buffersInstancesIn.count / this.instanceComponents) : 0;
-        gl.drawArraysInstanced(gl.TRIANGLES, 0, this.buffersVerticesIn.count,
+        gl.drawArraysInstanced(this.drawMode, 0, this.buffersVerticesIn[0].count,
             n)
     }
     else
     {
-        gl.drawArrays(gl.TRIANGLES, 0, this.buffersVerticesIn.count);
+        gl.drawArrays(this.drawMode, 0, this.buffersVerticesIn[0].count);
     }
 }
 else if(this.mode == gl.ELEMENT_ARRAY_BUFFER)
 {
     if(this.buffersInstancesIn)
     {
-        gl.drawElementsInstanced(gl.TRIANGLES, this.buffersIndicesIn ? this.buffersIndicesIn.count : 0, gl.UNSIGNED_SHORT, 0,
+        gl.drawElementsInstanced(this.drawMode, this.buffersIndicesIn ? this.buffersIndicesIn.count : 0, gl.UNSIGNED_SHORT, 0,
             this.buffersInstancesIn ? (this.buffersInstancesIn.count / this.instanceComponents) : 0);
     }
     else
     {
-        gl.drawElements(gl.TRIANGLES, this.buffersIndicesIn ? this.buffersIndicesIn.count : 0, gl.UNSIGNED_SHORT, 0);
+        gl.drawElements(this.drawMode, this.buffersIndicesIn ? this.buffersIndicesIn.count : 0, gl.UNSIGNED_SHORT, 0);
     }
 }

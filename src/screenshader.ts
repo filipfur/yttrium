@@ -22,9 +22,14 @@ void main()
 {
   vec4 diffuse = texture(u_texture_0, TexCoord);
   
+  float exposure = 5.0;
+
+  vec3 color = vec3(1.0) - exp(-diffuse.rgb * exposure);
+
   //FragColor = vec4(diffuse.rgb * (1.0 - length((TexCoord.xy - 0.5) * 0.5)), 1.0);
-  FragColor = vec4(diffuse.rgb, 1.0);
+  FragColor = vec4(color, 1.0);
   //FragColor = vec4(TexCoord, 0.0 , 1.0);
+  FragColor.rgb = pow(FragColor.rgb, vec3(1.0 / 2.2));
 }
 `;
 
