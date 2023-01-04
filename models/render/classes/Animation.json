@@ -1,0 +1,94 @@
+{
+  "name": "Animation",
+  "hash": "af2h45m46xq8WYLWyt2jsi5OjQ0zbqun",
+  "position": {
+    "x": -199,
+    "y": 766
+  },
+  "attributes": [
+    {
+      "name": "name",
+      "type": {
+        "name": "string",
+        "package": "primitives"
+      },
+      "identifier": true
+    },
+    {
+      "name": "numberOfFrames",
+      "type": {
+        "name": "integer",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "secondsPerFrame",
+      "type": {
+        "name": "real",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "translations",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "rotations",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "numberOfFrames",
+          "type": {
+            "name": "integer",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "secondsPerFrame",
+          "type": {
+            "name": "real",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "translations",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        },
+        {
+          "name": "rotations",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "OQZl1bg9omAfxbIz3djcJR8z8vtuCvHW"
+    }
+  ],
+  "inherits": []
+}

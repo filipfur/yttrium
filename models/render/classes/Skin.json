@@ -2,8 +2,8 @@
   "name": "Skin",
   "hash": "R0Tr3PrfRBy7wr54Mpn5VSRInnbH69Un",
   "position": {
-    "x": 458,
-    "y": 274
+    "x": 418,
+    "y": 444
   },
   "attributes": [
     {
@@ -68,10 +68,10 @@
       },
       "parameters": [
         {
-          "name": "node",
+          "name": "worldMatrix",
           "type": {
-            "name": "Node",
-            "package": "render"
+            "name": "any",
+            "package": "primitives"
           }
         }
       ],

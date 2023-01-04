@@ -1,0 +1,12 @@
+{
+  "left": {
+    "className": "SkinnedObject",
+    "cardinality": "*",
+    "phrase": "animated by"
+  },
+  "right": {
+    "className": "Animation",
+    "cardinality": "0..1",
+    "phrase": ""
+  }
+}

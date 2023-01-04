@@ -16,7 +16,7 @@ out vec4 Weights;
 uniform mat4 u_projection;
 uniform mat4 u_view;
 uniform mat4 u_model;
-uniform mat4 u_jointMatrix[16];
+uniform mat4 u_jointMatrix[24];
 
 void main() {
   FragPos = vec3(u_model * vec4(aPos.xyx, 1.0));
@@ -49,7 +49,8 @@ in vec4 Weights;
 out vec4 FragColor;
 uniform sampler2D u_texture_0;
 uniform vec3 u_view_pos;
-uniform mat4 u_jointMatrix[16];
+uniform mat4 u_jointMatrix[24];
+uniform vec4 u_color;
 
 float stylize(float f, float segments)
 {
@@ -58,7 +59,7 @@ float stylize(float f, float segments)
 
 void main() 
 {
-  vec4 diffuse = texture(u_texture_0, TexCoord);
+  vec4 diffuse = texture(u_texture_0, TexCoord) * u_color;
   vec3 lightPos = vec3(16.0, 23.0, 0.0);
   
   vec3 lightDir = normalize(vec3(0.1,1,0.1));

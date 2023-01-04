@@ -1,3 +1,7 @@
+if(!this.visible)
+{
+    return;
+}
 if(this.storesTexturesIn)
 {
     this.storesTexturesIn.forEach((texture, i) => {

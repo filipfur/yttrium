@@ -3,6 +3,8 @@ import { Skin } from "./gen/render/skin";
 import { Node } from "./gen/render/node";
 import { Object } from "./gen/render/object";
 import { TRS } from "./gen/render/trs";
+import { SkinnedObject } from "./gen/render/skinnedobject";
+import { Animation } from "./gen/render/animation";
 
 /*const fs = require('fs');
 
@@ -94,7 +96,7 @@ const glTypeToTypedArrayMap:any = {
     return glTypeToTypedArrayMap[type] || throwNoKey(type);
   }
 
-  function getInverseBindMatrixData(gltf:any, accessorIndex:number) {
+  function getDataByAccessor(gltf:any, accessorIndex:number) {
     const accessor = gltf.accessors[accessorIndex];
     const bufferView = gltf.bufferViews[accessor.bufferView];
     const TypedArray = glTypeToTypedArray(accessor.componentType);
@@ -108,6 +110,8 @@ const glTypeToTypedArrayMap:any = {
 export async function readGLTF(url:string) {
 
     const gltf = await loadJSON(url);
+
+    let skinnedObject:SkinnedObject|null = null;
    
     // load all the referenced files relative to the gltf file
     const baseURL = new URL(url, location.href);
@@ -148,7 +152,8 @@ export async function readGLTF(url:string) {
         if (realMesh) {
             //node.drawables.push(new MeshRenderer(realMesh));
             console.log("Real mesh: " + name);
-            trs.hasRenderable = new Object(realMesh.primitives[0].vertexArray, null);
+            skinnedObject = new SkinnedObject(realMesh.primitives[0].vertexArray, null);
+            skinnedObject.hasStructure = node;
         }
         return node;
     });
@@ -171,23 +176,106 @@ export async function readGLTF(url:string) {
         scene.root = new Node(scene.name, new TRS(glm.vec3(0.0), glm.quat(1.0, 0.0, 0.0, 0.0), glm.vec3(1.0, 1.0, 1.0)));
         addChildren(gltf.nodes, scene.root, scene.nodes);
 
+        if(skinnedObject)
+        {
+            skinnedObject.hasRoot = scene.root;
+        }
+
         const iterateFn = (node:Node, indentation:string) => {
             node.hasChildren.forEach((child:Node) => {
                 console.log(indentation + child.name + (child.hasSource ? (child.hasSource.hasRenderable != null ? "(render)" : "(trs)") : ""));
-                iterateFn(child, indentation + "    ");
+                iterateFn(child, indentation + "  ");
             });
         }
         console.log(scene.root.name);
-        iterateFn(scene.root, "    ");
+        iterateFn(scene.root, "  ");
     }
 
     let skin;
     gltf.skins = gltf.skins.map((skin:any) => {
-        const joints = skin.joints.map((ndx:number) => gltf.nodes[ndx]);
-        const inverseBindMatrixData = getInverseBindMatrixData(gltf, skin.inverseBindMatrices)
-        return new Skin(joints, inverseBindMatrixData);
+        //const joints = skin.joints.map((ndx:number) => gltf.nodes[ndx]);
+        const joints = new Map();
+        skin.joints.forEach((ndx:number) => {
+            joints.set(ndx, gltf.nodes[ndx]);
+        })
+        const inverseBindMatrixData = getDataByAccessor(gltf, skin.inverseBindMatrices)
+        const s = new Skin(joints, inverseBindMatrixData);
+        if(skinnedObject)
+        {
+            skinnedObject.storesBoneData = s;
+        }
+        return s;
     })
 
-    //console.log(gltf.buffers[0]);
-    return gltf;
+    gltf.animations = gltf.animations.map((animation:any) => {
+        console.log("animation: " + animation.name);
+        let inputs = new Map();
+        let outputs = new Map();
+        animation.samplers = animation.samplers.map((sampler:any) => {
+            console.log(sampler.input);
+            if(!inputs.has(sampler.input))
+            {
+                inputs.set(sampler.input, getDataByAccessor(gltf, sampler.input));
+                animation.minTime = gltf.accessors[sampler.input].min[0];
+                animation.maxTime = gltf.accessors[sampler.input].max[0];
+                animation.frames = inputs.get(sampler.input).length;
+                animation.sPerFrame = animation.maxTime / animation.frames;
+                animation.fps = 1.0 / animation.sPerFrame;
+                console.log(`minTime=${animation.minTime}, maxTime=${animation.maxTime}, frames=${animation.frames},
+                    sPerFrame=${sampler.sPerFrame} fps=${sampler.fps}`)
+            }
+            if(!outputs.has(sampler.output))
+            {
+                outputs.set(sampler.output, getDataByAccessor(gltf, sampler.output));
+            }
+            sampler.inputBuffer = inputs.get(sampler.input);
+            sampler.outputBuffer = outputs.get(sampler.output);
+            return sampler;
+        });
+        animation.matrices = new Map();
+        animation.translations = new Map();
+        animation.rotations = new Map();
+        animation.channels = animation.channels.map((channel:any) => {
+            channel.sampler = animation.samplers[channel.sampler];
+            if(channel.target.path === "translation")
+            {
+                let matrices = new Array(animation.frames);
+                let translations = new Array(animation.frames);
+                for(let i = 0; i < animation.frames; ++i)
+                {
+                    let I = i * 3;
+                    let pos = glm.vec3(channel.sampler.outputBuffer[I], channel.sampler.outputBuffer[I + 1], channel.sampler.outputBuffer[I + 2]);
+                    translations[i] = pos;
+                    matrices[i] = glm.translate(glm.mat4(1.0), pos);
+                }
+                animation.matrices.set(channel.target.node, matrices);
+                animation.translations.set(channel.target.node, translations);
+            }
+            else if(channel.target.path === "rotation")
+            {
+                let matrices = animation.matrices.get(channel.target.node);
+                let rotations = new Array(animation.frames);
+                for(let i = 0; i < animation.frames; ++i)
+                {
+                    let I = i * 4;
+                    let rot = glm.quat(channel.sampler.outputBuffer[I + 3], channel.sampler.outputBuffer[I], channel.sampler.outputBuffer[I + 1], channel.sampler.outputBuffer[I + 2]);
+
+                    rotations[i] = rot;
+                    matrices[i]["*="](glm.toMat4(rot));
+                }
+                animation.rotations.set(channel.target.node, rotations);
+            }
+            channel.target.node = gltf.nodes[channel.target.node];
+            return channel;
+        })
+        console.log(animation.matrices);
+        if(skinnedObject)
+        {
+            let anim = new Animation(animation.name, animation.frames, animation.sPerFrame, animation.translations, animation.rotations);
+            skinnedObject.animatedBy.set(animation.name, anim);
+        }
+        return animation;
+    })
+
+    return skinnedObject;
 }

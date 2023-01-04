@@ -4,3 +4,4 @@ if(this.modelInvalidated)
 }
 shaderProgram.use();
 shaderProgram.setUniformMat4("u_model", this.model.array);
+shaderProgram.setUniformVec4("u_color", this.color.array);

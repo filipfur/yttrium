@@ -40,6 +40,20 @@
         "name": "boolean",
         "package": "primitives"
       }
+    },
+    {
+      "name": "color",
+      "type": {
+        "name": "any",
+        "package": "primitives"
+      }
+    },
+    {
+      "name": "visible",
+      "type": {
+        "name": "boolean",
+        "package": "primitives"
+      }
     }
   ],
   "operations": [
@@ -86,8 +100,8 @@
         {
           "name": "shaderProgram",
           "type": {
-            "name": "any",
-            "package": "primitives"
+            "name": "ShaderProgram",
+            "package": "core"
           }
         }
       ],
@@ -152,6 +166,74 @@
         }
       ],
       "hash": "6qSioQOiL7wVs9AOd6PjupY7qx8LLbBk"
+    },
+    {
+      "name": "setYRotation",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "radians",
+          "type": {
+            "name": "real",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "SoqJWgBC6LDcmrV4q6T5jQMMfG9eoIvw"
+    },
+    {
+      "name": "rotateY",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "radians",
+          "type": {
+            "name": "real",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "5gSGIYqudmlgfAokSfWQiR6rUAffchzr"
+    },
+    {
+      "name": "setColor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "color",
+          "type": {
+            "name": "any",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "LLP8K2ePKSTB9iS0KYtiIEgGtY0jjRVx"
+    },
+    {
+      "name": "setVisible",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "visible",
+          "type": {
+            "name": "boolean",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "wZayYBobWbWvtsvlFgkV3xIgzdqtaAAQ"
     }
   ],
   "inherits": [
@@ -172,7 +254,7 @@
       },
       "type": {
         "name": "public",
-        "package": "visibility" 
+        "package": "visibility"
       }
     }
   ]

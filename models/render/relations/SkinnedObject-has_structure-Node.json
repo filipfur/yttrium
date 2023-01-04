@@ -1,0 +1,12 @@
+{
+  "left": {
+    "className": "SkinnedObject",
+    "cardinality": "0..1",
+    "phrase": "has structure"
+  },
+  "right": {
+    "className": "Node",
+    "cardinality": "0..1",
+    "phrase": ""
+  }
+}

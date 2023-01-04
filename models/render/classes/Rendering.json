@@ -25,21 +25,13 @@
       "hash": "e7khWAjhr8efp33G71zz0jPPqSdIsPfM"
     },
     {
-      "name": "addRenderable",
+      "name": "render",
       "type": {
         "name": "void",
         "package": "primitives"
       },
-      "parameters": [
-        {
-          "name": "renderable",
-          "type": {
-            "name": "Renderable",
-            "package": "render"
-          }
-        }
-      ],
-      "hash": "Rq3aW7uVLYXlTjM9gULCWsOxiNMq88h5"
+      "parameters": [],
+      "hash": "g8gS3v9lUtcgMEWKzZ0yrSNUVOgB6jnl"
     },
     {
       "name": "setRenderables",
@@ -59,13 +51,21 @@
       "hash": "egvEfOZZfuHQQTHEgFwJ3mxVWJPouhRQ"
     },
     {
-      "name": "render",
+      "name": "addRenderable",
       "type": {
         "name": "void",
         "package": "primitives"
       },
-      "parameters": [],
-      "hash": "g8gS3v9lUtcgMEWKzZ0yrSNUVOgB6jnl"
+      "parameters": [
+        {
+          "name": "renderable",
+          "type": {
+            "name": "Renderable",
+            "package": "render"
+          }
+        }
+      ],
+      "hash": "Rq3aW7uVLYXlTjM9gULCWsOxiNMq88h5"
     }
   ],
   "inherits": []

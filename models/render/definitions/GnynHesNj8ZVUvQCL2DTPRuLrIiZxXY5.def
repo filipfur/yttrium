@@ -3,7 +3,7 @@ if (source) {
     this.localMatrix = source.getMatrix();
 }
 
-if(this.first)
+/*if(this.first)
 {
     console.log("name: " + this.name);
     console.log("first: " + this.localMatrix.array);
@@ -12,7 +12,7 @@ if(this.first)
     console.log("quat.w: " + source?.rotation.w)
     console.log("scale: " + source?.scale);
     this.first = false;
-}
+}*/
 
 if (parentWorldMatrix) {
 // a matrix was passed in so do the math

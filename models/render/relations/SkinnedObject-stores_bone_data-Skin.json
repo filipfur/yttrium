@@ -1,0 +1,12 @@
+{
+  "left": {
+    "className": "SkinnedObject",
+    "cardinality": "0..1",
+    "phrase": "stores bone data"
+  },
+  "right": {
+    "className": "Skin",
+    "cardinality": "0..1",
+    "phrase": ""
+  }
+}

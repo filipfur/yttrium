@@ -1,0 +1,91 @@
+{
+  "name": "SkinnedObject",
+  "hash": "v62kbGReKweAPgbPSoKunM5lzccdY5Y9",
+  "position": {
+    "x": 100,
+    "y": 693
+  },
+  "attributes": [
+    {
+      "name": "animation",
+      "type": {
+        "name": "string",
+        "package": "primitives"
+      }
+    }
+  ],
+  "operations": [
+    {
+      "name": "constructor",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [],
+      "hash": "QWK4t3tRVdIE8PbhPK5Fqkdq9SeygPWC"
+    },
+    {
+      "name": "shade",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "shaderProgram",
+          "type": {
+            "name": "ShaderProgram",
+            "package": "core"
+          }
+        }
+      ],
+      "hash": "kcvoHWWKMq3ewMTBGI45mSAvp74CoxgE"
+    },
+    {
+      "name": "update",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "dt",
+          "type": {
+            "name": "real",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "kx0nl6OC1B2pAP7Ytt2498LqKChgvHHG"
+    },
+    {
+      "name": "setAnimation",
+      "type": {
+        "name": "void",
+        "package": "primitives"
+      },
+      "parameters": [
+        {
+          "name": "animation",
+          "type": {
+            "name": "string",
+            "package": "primitives"
+          }
+        }
+      ],
+      "hash": "MDeZftpgr1tgDaG0XScVscdMGPaAalXY"
+    }
+  ],
+  "inherits": [
+    {
+      "name": {
+        "name": "Object",
+        "package": "render"
+      },
+      "type": {
+        "name": "public",
+        "package": "visibility"
+      }
+    }
+  ]
+}

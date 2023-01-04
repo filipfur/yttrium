@@ -1,0 +1,5 @@
+this.storesBoneData = null;
+this.hasStructure = null;
+this.hasRoot = null;
+this.animatedBy = new Map<string, Animation>;
+this.animation = "";

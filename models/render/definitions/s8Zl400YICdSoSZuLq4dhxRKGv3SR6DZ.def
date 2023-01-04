@@ -1,9 +1,9 @@
 this.inverseBindMatrices = [];
 this.jointMatrices = [];
 // allocate enough space for one matrix per joint
-this.jointData = new Float32Array(joints.length * 16);
+this.jointData = new Float32Array(this.joints.size * 16);
 // create views for each joint and inverseBindMatrix
-for (let i = 0; i < joints.length; ++i) {
+for (let i = 0; i < this.joints.size; ++i) {
     let farr = new Float32Array(
         inverseBindMatrixData.buffer,
         inverseBindMatrixData.byteOffset + Float32Array.BYTES_PER_ELEMENT * 16 * i,

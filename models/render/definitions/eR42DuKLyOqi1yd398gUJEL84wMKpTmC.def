@@ -3,4 +3,4 @@ this.hasParent = null;
 this.hasChildren = [];
 this.localMatrix = glm.mat4(1.0);
 this.worldMatrix = glm.mat4(1.0);
-this.first = true;
+//this.first = true;

@@ -1,11 +1,12 @@
-const globalWorldInverse = glm.inverse(node.worldMatrix);
+const globalWorldInverse = glm.inverse(worldMatrix);
 // go through each joint and get its current worldMatrix
 // apply the inverse bind matrices and store the
 // entire result in the texture
-for (let j = 0; j < this.joints.length; ++j) {
-    const joint = this.joints[j];
+let j=0;
+for (let [ndx, joint] of this.joints) {
     //let dst = this.jointMatrices[j];
     this.jointMatrices[j] = globalWorldInverse["*"](joint.worldMatrix)["*"](this.inverseBindMatrices[j]);
+    ++j;
     //this.jointMatrices[j] = glm.multiply(globalWorldInverse, joint.worldMatrix);
     //this.jointMatrices[j] = glm.multiply(this.jointMatrices[j], this.inverseBindMatrices[j]);
 }

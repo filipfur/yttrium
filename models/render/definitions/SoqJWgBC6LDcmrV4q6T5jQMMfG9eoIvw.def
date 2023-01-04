@@ -1,0 +1,2 @@
+this.modelInvalidated = true;
+this.rotation = glm.angleAxis(radians, glm.vec3(0,1,0));

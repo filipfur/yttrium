@@ -1,0 +1,33 @@
+super.shade(shaderProgram);
+if(this.animatedBy && this.storesBoneData)
+{
+    const animation = this.animatedBy.has(this.animation) ? this.animatedBy.get(this.animation) : this.animatedBy.values().next().value;
+    if(animation)
+    {
+        const animationFrame = Math.floor(this.time / animation.secondsPerFrame) % animation.numberOfFrames;
+        for(let [ndx, value] of animation.translations)
+        {
+            this.storesBoneData.joints.get(ndx).hasSource.position = value[animationFrame];
+        }
+        for(let [ndx, value] of animation.rotations)
+        {
+            this.storesBoneData.joints.get(ndx).hasSource.rotation = value[animationFrame];
+        }
+    }
+}
+if(this.hasStructure)
+{
+    this.hasStructure.localMatrix = this.model;
+    if(this.hasRoot)
+    {
+        this.hasRoot.updateWorldMatrix(null);
+    }
+    if(this.storesBoneData)
+    {
+        this.storesBoneData.update(this.hasStructure.worldMatrix);
+        for(let i=0; i < this.storesBoneData.jointMatrices.length; ++i)
+        {
+            shaderProgram.setUniformMat4(`u_jointMatrix[${i}]`, this.storesBoneData.jointMatrices[i].array);
+        }
+    }
+}
